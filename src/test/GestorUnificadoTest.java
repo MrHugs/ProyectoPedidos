@@ -9,21 +9,22 @@ import org.junit.Test;
 
 import Logica.antigua.GestorListas;
 import control.adaptador.GestorUnificado;
-import modelo.Persona;
+import modelo.Cliente;
+
 import utiles.Tipo;
 
 public class GestorUnificadoTest {
 	GestorUnificado instancia;
-	ArrayList<Persona> lista;
+	ArrayList<Cliente> lista;
 	@Before
 	public void setUp() throws Exception {
 		
 		instancia=new GestorUnificado(Tipo.cliente);
-		lista=new ArrayList<Persona>();
-		lista.add(new Persona("1", "Ataulfo"));
-		lista.add(new Persona("2", "Humberto"));
-		lista.add(new Persona("3", "Jeremias"));
-		lista.add(new Persona("4", "Diocleciano"));
+		lista=new ArrayList<Cliente>();
+		lista.add(new Cliente("1", "Ataulfo"));
+		lista.add(new Cliente("2", "Humberto"));
+		lista.add(new Cliente("3", "Jeremias"));
+		lista.add(new Cliente("4", "Diocleciano"));
 		instancia.escribir(lista);
 	}
 

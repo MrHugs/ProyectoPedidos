@@ -3,11 +3,11 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Persona implements Serializable{
+public class Cliente implements Serializable{
 	private String dni;
 	private String nombre;
 
-	public Persona(String dni, String nombre) {
+	public Cliente(String dni, String nombre) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
@@ -24,6 +24,6 @@ public class Persona implements Serializable{
 	@Override
 	public boolean equals(Object obj) {
 //		System.out.println("soy el equals de persona");
-		return this.dni.equals(((Persona)obj).dni);
+		return this.dni.equals(((Cliente)obj).dni);
 	}
 }

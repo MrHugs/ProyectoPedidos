@@ -2,11 +2,12 @@ package Logica.antigua;
 
 import java.util.ArrayList;
 
-import modelo.Persona;
+import modelo.Cliente;
+
 
 public class PrincipalLista {
 public static void main(String[] args) {
-	ArrayList<Persona> poblacion=new ArrayList<>();
+	ArrayList<Cliente> poblacion=new ArrayList<>();
 	
 }
 }

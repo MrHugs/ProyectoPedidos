@@ -6,15 +6,16 @@ import java.util.Iterator;
 
 import control.logica.Gestor;
 import modelo.Articulo;
+import modelo.Cliente;
 import modelo.Pedido;
-import modelo.Persona;
+
 
 
 public class ParaUI extends vista.UI {
 	public ParaUI() {
 		btnAltaCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Gestor().insertar(new Persona("1","3"));
+				new Gestor().insertar(new Cliente("1","3"));
 			}
 		});
 		btnAltaArticulo.addActionListener(new ActionListener() {

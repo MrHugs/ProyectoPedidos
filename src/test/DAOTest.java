@@ -10,8 +10,9 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import modelo.Cliente;
 import modelo.DAO;
-import modelo.Persona;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DAOTest {
@@ -24,11 +25,11 @@ public class DAOTest {
 
 	@Before
 	public void setUp() throws Exception {
-		lista.add(new Persona("1", "A"));
-		lista.add(new Persona("2", "B"));
-		lista.add(new Persona("3", "C"));
-		lista.add(new Persona("4", "D"));
-		lista.add(new Persona("5", "E"));
+		lista.add(new Cliente("1", "A"));
+		lista.add(new Cliente("2", "B"));
+		lista.add(new Cliente("3", "C"));
+		lista.add(new Cliente("4", "D"));
+		lista.add(new Cliente("5", "E"));
 	}
 
 	@Test
@@ -55,16 +56,16 @@ public class DAOTest {
 	public void test03GrabarO() {
 		//es mejor borrar el archivo para cada prueba
 		new File(PRUEBAO_TST).delete();
-		assertTrue(instancia.grabar(new Persona("1", "F"), PRUEBAO_TST, UNICOO));
-		assertTrue(instancia.grabar(new Persona("2", "G"), PRUEBAO_TST, UNICOO));
+		assertTrue(instancia.grabar(new Cliente("1", "F"), PRUEBAO_TST, UNICOO));
+		assertTrue(instancia.grabar(new Cliente("2", "G"), PRUEBAO_TST, UNICOO));
 	}
 
 	@Test
 	public void test04LeerO() {
 		//primer objeto
-		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Persona("1", "")));
+		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Cliente("1", "")));
 		//segundo Objeto
-		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Persona("2", "")));		
+		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Cliente("2", "")));		
 	}
 
 }

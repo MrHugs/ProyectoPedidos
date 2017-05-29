@@ -8,29 +8,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Logica.antigua.GestorListas;
-import modelo.Persona;
+import modelo.Cliente;
+
 
 public class GestorListasTest {
 	String path="archivito.fgd";
 
 	GestorListas instancia;
-	ArrayList<Persona> lista;
+	ArrayList<Cliente> lista;
 	@Before
 	public void setUp() throws Exception {
 		instancia=new GestorListas();
-		lista=new ArrayList<Persona>();
-		lista.add(new Persona("1", "Ataulfo"));
-		lista.add(new Persona("2", "Humberto"));
-		lista.add(new Persona("3", "Jeremias"));
-		lista.add(new Persona("4", "Diocleciano"));
+		lista=new ArrayList<Cliente>();
+		lista.add(new Cliente("1", "Ataulfo"));
+		lista.add(new Cliente("2", "Humberto"));
+		lista.add(new Cliente("3", "Jeremias"));
+		lista.add(new Cliente("4", "Diocleciano"));
 		instancia.escrbirLista(lista, path);
 	}
 
 	@Test
 	public void testBorrarElemento() {
-		Persona borrador=new Persona("3", "");
+		Cliente borrador=new Cliente("3", "");
 		assertTrue(instancia.borrarElemento(lista, borrador,path));
-		ArrayList<Persona> miLista=instancia.obtenerLista(path);
+		ArrayList<Cliente> miLista=instancia.obtenerLista(path);
 		System.out.println();
 	}
 

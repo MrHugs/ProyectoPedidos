@@ -5,8 +5,8 @@ import java.util.Set;
 
 import control.adaptador.GestorUnificado;
 import modelo.Articulo;
+import modelo.Cliente;
 import modelo.Pedido;
-import modelo.Persona;
 import utiles.Tipo;
 
 public class Gestor {
@@ -45,7 +45,7 @@ public class Gestor {
 		return borrado;
 	}
 
-	public boolean insertar(Persona obj) {
+	public boolean insertar(Cliente obj) {
 		return escribe(obj, Tipo.cliente);
 	}
 
@@ -68,7 +68,7 @@ public class Gestor {
 	 *            el objeto a buscar
 	 * @return el valor de la posicion enla que se encuentra o -1 si no existe
 	 */
-	public int buscar(Persona cliente) {
+	public int buscar(Cliente cliente) {
 		return busca(cliente, Tipo.cliente);
 	}
 
