@@ -20,7 +20,7 @@ public class ParaUI extends vista.UI {
 		});
 		btnAltaArticulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Gestor().insertar(new Articulo());
+				new Gestor().insertar(new Articulo("1", "mew", 20f, "zapatilla"));
 			}
 		});
 		btnAltapedido.addActionListener(new ActionListener() {

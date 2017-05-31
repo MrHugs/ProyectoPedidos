@@ -6,13 +6,18 @@ import java.util.ArrayList;
 public class Cliente implements Serializable{
 	private String dni;
 	private String nombre;
+	private String descripcion;
+
+	
 
 	public Cliente(String dni, String nombre) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 	}
-
+	public String getDescripcion() {
+		return descripcion;
+	}
 	public String getDni() {
 		return dni;
 	}

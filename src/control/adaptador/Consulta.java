@@ -3,14 +3,11 @@ package control.adaptador;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
+import utiles.Tipo;
 
 public class Consulta implements IConsultas {
 
-	@Override
-	public boolean consultaArticulo(Articulo articulo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public boolean consultaPedido(Pedido pedido) {
@@ -19,14 +16,23 @@ public class Consulta implements IConsultas {
 	}
 
 	@Override
-	public boolean consultaCliente(Cliente cliente) {
+	public Cliente consultaCliente( String id, Tipo tipo) {
+		Cliente cliente = null;
 		// TODO Auto-generated method stub
-		return false;
+		return cliente;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public boolean consultaArticulo(String id, Tipo tipo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 
 }
