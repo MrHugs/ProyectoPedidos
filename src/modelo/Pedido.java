@@ -1,5 +1,9 @@
 package modelo;
 
-public class Pedido {
+import java.util.ArrayList;
 
+public class Pedido {
+String id;
+Cliente cliente;
+ArrayList listaLineasPedidos = new ArrayList<lineaPedido>();
 }
