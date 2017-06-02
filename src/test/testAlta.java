@@ -2,6 +2,8 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,12 +12,15 @@ import control.adaptador.Consulta;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
+import modelo.lineaPedido;
 import utiles.Tipo;
 
 public class testAlta {
 
 	Altas alta = new Altas();
 	Consulta consulta = new Consulta();
+	Cliente cliente = new Cliente("1", "Manolo Pajares");
+	ArrayList listaPedidos = new ArrayList<lineaPedido>();
 
 	@Test
 	public void testAltaArticulo() {
@@ -33,14 +38,13 @@ public class testAlta {
 
 	@Test
 	public void testAltaCliente() {
-		Cliente cliente = new Cliente("1", "Manolo Pajares");
 		assertTrue(alta.altaCliente(cliente, Tipo.cliente));
 		assertTrue(cliente.equals(consulta.consultaCliente("1", Tipo.cliente)));
 	}
 
 	@Test
 	public void testAltaPedido() {
-		Pedido pedido = new Pedido();
+		Pedido pedido = new Pedido("1", cliente, listaPedidos);
 	}
 
 }
