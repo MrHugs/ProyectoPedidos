@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Pedido {
 String id;
 Cliente cliente;
-ArrayList listaLineasPedidos = new ArrayList<lineaPedido>();
+ArrayList listaLineasPedidos = new ArrayList();
 
 public Pedido(String id, Cliente cliente, ArrayList listaLineasPedidos) {
 	super();
@@ -15,11 +15,27 @@ public Pedido(String id, Cliente cliente, ArrayList listaLineasPedidos) {
 }
 
 
+
+
 @Override
 public boolean equals(Object obj) {
-//	System.out.println("soy el equals de persona");
-	return this.id.equals(((Pedido)obj).id);
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Pedido other = (Pedido) obj;
+	if (id == null) {
+		if (other.id != null)
+			return false;
+	} else if (!id.equals(other.id))
+		return false;
+	return true;
 }
+
+
+
 
 public String getId() {
 	return id;

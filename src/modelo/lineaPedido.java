@@ -4,13 +4,13 @@ public class lineaPedido {
 	
 	
 String numeroLinea;
-String articulo;
+Articulo articulo;
 int cantidad;
 
 
 
 
-public lineaPedido(String numeroLinea, String articulo, int cantidad) {
+public lineaPedido(String numeroLinea, Articulo articulo, int cantidad) {
 	super();
 	this.numeroLinea = numeroLinea;
 	this.articulo = articulo;
@@ -28,7 +28,7 @@ public String getNumeroLinea() {
 
 
 
-public String getArticulo() {
+public Articulo getArticulo() {
 	return articulo;
 }
 

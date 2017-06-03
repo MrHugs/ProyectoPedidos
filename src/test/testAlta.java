@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import control.adaptador.Altas;
 import control.adaptador.Consulta;
+import control.adaptador.GestorUnificado;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
@@ -18,33 +19,48 @@ import utiles.Tipo;
 public class testAlta {
 
 	Altas alta = new Altas();
-	Consulta consulta = new Consulta();
-	Cliente cliente = new Cliente("1", "Manolo Pajares");
-	ArrayList listaPedidos = new ArrayList<lineaPedido>();
+	Cliente cliente = new Cliente("1", "Manolo Pajares","mu bonico");
+	Articulo articulo = new Articulo("1", "palo", 20f, "UN PALOOOOO!!");
+	Articulo articulo2 = new Articulo("2", "zapatillas", 2000f, "yeah");
+	ArrayList listaLineaPedidos = new ArrayList();
+	
+	
+	
+	@Test
+	public void testAltaCliente() {
+		GestorUnificado gestorU = new GestorUnificado(Tipo.cliente);
+		assertTrue(alta.altaCliente(cliente.getDni(), cliente.getNombre(), cliente.getDescripcion(), Tipo.cliente));
+		ArrayList listaCLientes = (ArrayList) gestorU.obtener();
+		assertTrue(listaCLientes.contains(cliente));	
+		
+		
+	}
 
 	@Test
 	public void testAltaArticulo() {
-		Articulo articulo = new Articulo("1", "el", 20f, "muy chachi");
-		Articulo articulo2 = new Articulo("2", "la", 40f, "piojoso");
-		Articulo articulo3 = new Articulo("3", "los", 5f, "tengo hambre");
-		assertTrue(alta.altaArticulo(articulo, Tipo.articulo));
-		assertTrue(alta.altaArticulo(articulo2, Tipo.articulo));
-		assertTrue(alta.altaArticulo(articulo3, Tipo.articulo));
-		assertTrue(articulo.equals(consulta.consultaArticulo("1", Tipo.articulo)));
-		assertTrue(articulo.equals(consulta.consultaArticulo("2", Tipo.articulo)));
-		assertTrue(articulo.equals(consulta.consultaArticulo("3", Tipo.articulo)));
-
+		GestorUnificado gestorU = new GestorUnificado(Tipo.articulo);
+		assertTrue(alta.altaArticulo(articulo.getIdentificador(), articulo.getNombre(), articulo.getPrecio(), articulo.getDescripcion(), Tipo.articulo));
+		ArrayList listaArticulos = (ArrayList) gestorU.obtener();
+		assertTrue(listaArticulos.contains(articulo));
 	}
 
-	@Test
-	public void testAltaCliente() {
-		assertTrue(alta.altaCliente(cliente, Tipo.cliente));
-		assertTrue(cliente.equals(consulta.consultaCliente("1", Tipo.cliente)));
-	}
+	
 
 	@Test
 	public void testAltaPedido() {
-		Pedido pedido = new Pedido("1", cliente, listaPedidos);
+		GestorUnificado gestorU = new GestorUnificado(Tipo.pedido);
+		listaLineaPedidos.add(new lineaPedido("1", articulo, 12));
+		listaLineaPedidos.add(new lineaPedido("2", articulo2, 22));
+		Pedido pedido = new Pedido("1", cliente, listaLineaPedidos);
+		assertTrue(alta.altaPedido(pedido.getId(), pedido.getCliente(), pedido.getListaLineasPedidos(), Tipo.pedido));
+		assertTrue(pedido.equals((Pedido)gestorU.obtener()));
+		
+		
+		
+		
+		
 	}
+	
+	
 
 }

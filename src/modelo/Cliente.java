@@ -10,10 +10,11 @@ public class Cliente implements Serializable{
 
 	
 
-	public Cliente(String dni, String nombre) {
+	public Cliente(String dni, String nombre ,String descripcion) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
+		this.descripcion = descripcion;
 	}
 	public String getDescripcion() {
 		return descripcion;

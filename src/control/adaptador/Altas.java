@@ -1,5 +1,7 @@
 package control.adaptador;
 
+import java.util.ArrayList;
+
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
@@ -13,21 +15,38 @@ public class Altas implements IAltas {
 
 	}
 
+	
+
+	
+
 	@Override
-	public boolean altaArticulo(Articulo articulo, Tipo tipo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	public boolean altaPedido(Pedido pedido, Tipo tipo) {
+	public boolean altaCliente(String dni, String nombre, String descripcion, Tipo tipo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+
+
+
+
 	@Override
-	public boolean altaCliente(Cliente cliente, Tipo tipo) {
+	public boolean altaArticulo(String identificador, String nombre, float prefio, String descripcion, Tipo tipo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
+
+
+
+	@Override
+	public boolean altaPedido(String id, Cliente cliente, ArrayList listaLineaPedidos, Tipo tipo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+
 
 }
