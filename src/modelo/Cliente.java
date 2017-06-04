@@ -3,7 +3,7 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente  {
+public class Cliente implements Serializable {
 	private String dni;
 	private String nombre;
 	private String descripcion;
@@ -31,5 +31,10 @@ public class Cliente  {
 	public boolean equals(Object obj) {
 //		System.out.println("soy el equals de persona");
 		return this.dni.equals(((Cliente)obj).dni);
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.dni+"\\, "+this.nombre+"\\, "+this.descripcion;
 	}
 }
