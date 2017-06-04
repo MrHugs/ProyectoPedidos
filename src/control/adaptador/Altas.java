@@ -15,7 +15,12 @@ public class Altas implements IAltas {
 	public boolean altaCliente(String dni, String nombre, String descripcion, Tipo tipo) {
 		Cliente cliente = new Cliente(dni, nombre, descripcion);
 		GestorUnificado gestorU = new GestorUnificado(tipo);
-		return gestorU.escribir(cliente);
+		ArrayList listacliente = (ArrayList) gestorU.obtener();
+		if(!listacliente.contains(cliente)){
+			listacliente.add(cliente);
+			return gestorU.escribir(listacliente);
+		}
+		return false;
 		
 	}
 
