@@ -21,14 +21,16 @@ public class Altas implements IAltas {
 
 	@Override
 	public boolean altaArticulo(String identificador, String nombre, float prefio, String descripcion, Tipo tipo) {
-		// TODO Auto-generated method stub
-		return false;
+		Articulo articulo = new Articulo(identificador, nombre, prefio, descripcion);
+		GestorUnificado gestorU = new GestorUnificado(tipo);
+		return gestorU.escribir(articulo);
 	}
 
 	@Override
 	public boolean altaPedido(String id, Cliente cliente, ArrayList listaLineaPedidos, Tipo tipo) {
-		// TODO Auto-generated method stub
-		return false;
+		Pedido pedido = new Pedido(id, cliente, listaLineaPedidos);
+		GestorUnificado gestorU = new GestorUnificado(tipo);
+		return gestorU.escribir(pedido);
 	}
 
 	
