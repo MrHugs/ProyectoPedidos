@@ -3,16 +3,22 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente implements Serializable{
+public class Cliente  {
 	private String dni;
 	private String nombre;
+	private String descripcion;
 
-	public Cliente(String dni, String nombre) {
+	
+
+	public Cliente(String dni, String nombre ,String descripcion) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
+		this.descripcion = descripcion;
 	}
-
+	public String getDescripcion() {
+		return descripcion;
+	}
 	public String getDni() {
 		return dni;
 	}

@@ -7,7 +7,7 @@ import utiles.Tipo;
 
 public interface IConsultas {
 
-	public boolean consultaArticulo(Articulo articulo);
+	public boolean consultaArticulo(String id, Tipo tipo);
 	public boolean consultaPedido(Pedido pedido);
-	public boolean consultaCliente(Cliente cliente);
+	public Cliente consultaCliente(String id, Tipo tipo);
 }
