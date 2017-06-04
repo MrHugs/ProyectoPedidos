@@ -1,7 +1,8 @@
 package utiles;
 
 public enum Tipo {
-	cliente("clientes.dat",true),articulo("articulos.dat",true),pedido("pedidos.dat",false),respaldo("respaldo.bak",false);
+	cliente("clientes.dat",true),articulo("articulos.dat",true),pedido("pedidos.dat",false)
+	,clienteTest("clientesTest.dat",true),articuloTest("articulosTest.dat",true),pedidoTest("pedidosTest.dat",false);
 	private String ruta;
 	private boolean lista;
 

@@ -21,7 +21,7 @@ public class Altas implements IAltas {
 		GestorUnificado gestorU = new GestorUnificado(tipo);
 		ArrayList listacliente = (ArrayList) gestorU.obtener();
 		if(listacliente==null)
-			listacliente = new  ArrayList<>();
+			listacliente = new  ArrayList();
 		if(!listacliente.contains(cliente)){
 			
 			listacliente.add(cliente);
@@ -45,6 +45,7 @@ public class Altas implements IAltas {
 			return gestorU.escribir(listaArticulo);
 		}
 		return false;
+
 	}
 
 	@Override
