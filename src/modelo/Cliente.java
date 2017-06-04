@@ -3,7 +3,7 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cliente implements Serializable{
+public class Cliente  {
 	private String dni;
 	private String nombre;
 	private String descripcion;
