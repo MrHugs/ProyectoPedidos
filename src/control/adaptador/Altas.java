@@ -6,6 +6,10 @@ import control.logica.Gestor;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
+
+
+
+
 import utiles.Tipo;
 
 public class Altas implements IAltas {
@@ -29,17 +33,27 @@ public class Altas implements IAltas {
 
 	@Override
 	public boolean altaArticulo(String identificador, String nombre, float prefio, String descripcion, Tipo tipo) {
-		
+
+		Articulo articulo = new Articulo(identificador, nombre, prefio, descripcion);
+		GestorUnificado gestorU = new GestorUnificado(tipo);
+		ArrayList listaArticulo = (ArrayList) gestorU.obtener();
+		if(listaArticulo==null)
+			listaArticulo = new  ArrayList<>();
+		if(!listaArticulo.contains(articulo)){
+			
+			listaArticulo.add(articulo);
+			return gestorU.escribir(listaArticulo);
+		}
+		return false;
+
 	}
 
 	@Override
 	public boolean altaPedido(String id, Cliente cliente, ArrayList listaLineaPedidos, Tipo tipo) {
-		// TODO Auto-generated method stub
-		return false;
+		Pedido pedido = new Pedido(id, cliente, listaLineaPedidos);
+		GestorUnificado gestorU = new GestorUnificado(tipo);
+		return gestorU.escribir(pedido);
 	}
-
-
-
 
 
 }
