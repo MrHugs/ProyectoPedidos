@@ -3,7 +3,6 @@ package control.adaptador;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
-import utiles.Tipo;
 
 public class Altas implements IAltas {
 
@@ -14,18 +13,18 @@ public class Altas implements IAltas {
 	}
 
 	@Override
-	public boolean altaArticulo(Articulo articulo, Tipo tipo) {
+	public boolean altaArticulo(Articulo articulo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
-	public boolean altaPedido(Pedido pedido, Tipo tipo) {
+	public boolean altaPedido(Pedido pedido) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean altaCliente(Cliente cliente, Tipo tipo) {
+	public boolean altaCliente(Cliente cliente) {
 		// TODO Auto-generated method stub
 		return false;
 	}
