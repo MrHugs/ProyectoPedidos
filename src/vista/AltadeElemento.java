@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.Cliente;
+
 import javax.swing.JTabbedPane;
 import javax.swing.BoxLayout;
 import java.awt.GridLayout;
@@ -29,6 +32,7 @@ public class AltadeElemento extends JFrame {
 	private JTextField txtNombreArticulo;
 	private JTextField txtPrecio;
 	private JTable tablaCesta;
+	protected JComboBox comboCliente;
 
 	/**
 	 * Launch the application.
@@ -172,8 +176,10 @@ public class AltadeElemento extends JFrame {
 		lblCliente.setBounds(10, 74, 46, 14);
 		panelPedido.add(lblCliente);
 		
-		JComboBox comboCliente = new JComboBox();
+		comboCliente = new JComboBox();
 		comboCliente.setBounds(77, 73, 109, 17);
+		Cliente cliente = new Cliente("2", "Ivantwo", "le desesperamos");
+		comboCliente.addItem(cliente);
 		panelPedido.add(comboCliente);
 		
 		JLabel lblCesta = new JLabel("Cesta");

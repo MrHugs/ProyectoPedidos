@@ -74,16 +74,20 @@ public class DAO {
 		File archivo = new File(path);
 		Object socio = null;
 		try {
+			if (!archivo.exists()) {
+				archivo.createNewFile();
+			}
 			// este es el if que controla si el flujo debe abrirse o no
 			if (unico || adaptadorLectura == null) {
-				FileInputStream flujoEntrada = new FileInputStream(archivo);
-				adaptadorLectura = new ObjectInputStream(flujoEntrada);
-			}
-			socio = adaptadorLectura.readObject();
-			// este controla si debe cerrarse o no
-			if (unico)
-				adaptadorLectura.close();
-			else {
+				if (archivo.length() > 0) {
+					FileInputStream flujoEntrada = new FileInputStream(archivo);
+					adaptadorLectura = new ObjectInputStream(flujoEntrada);
+					socio = adaptadorLectura.readObject();
+					// este controla si debe cerrarse o no
+					if (unico)
+						adaptadorLectura.close();
+				}
+			} else {
 				// si tras una operacion de lectura el resultado ha sido null
 				// implica ue el flujo ha llegado al final del fichero
 				if (socio == null) {
@@ -131,8 +135,8 @@ public class DAO {
 			obtenido = leer(ruta, lista);
 		}
 		// tendriamos que renombrar el archivo nuevo y borrar el antiguo
-		//aqui borramos el ficheor fisico no el objeto file que se ha creado 
-		//con una ruta a un elemento que puede existir o no
+		// aqui borramos el ficheor fisico no el objeto file que se ha creado
+		// con una ruta a un elemento que puede existir o no
 		antiguo.delete();
 		return nuevo.renameTo(antiguo);
 	}

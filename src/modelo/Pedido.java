@@ -3,7 +3,7 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pedido implements Serializable{
+public class Pedido {
 String id;
 Cliente cliente;
 ArrayList listaLineasPedidos = new ArrayList();

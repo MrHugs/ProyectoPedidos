@@ -20,7 +20,10 @@ public class Altas implements IAltas {
 		Cliente cliente = new Cliente(dni, nombre, descripcion);
 		GestorUnificado gestorU = new GestorUnificado(tipo);
 		ArrayList listacliente = (ArrayList) gestorU.obtener();
+		if(listacliente==null)
+			listacliente = new  ArrayList<>();
 		if(!listacliente.contains(cliente)){
+			
 			listacliente.add(cliente);
 			return gestorU.escribir(listacliente);
 		}
@@ -30,9 +33,18 @@ public class Altas implements IAltas {
 
 	@Override
 	public boolean altaArticulo(String identificador, String nombre, float prefio, String descripcion, Tipo tipo) {
+
 		Articulo articulo = new Articulo(identificador, nombre, prefio, descripcion);
 		GestorUnificado gestorU = new GestorUnificado(tipo);
-		return gestorU.escribir(articulo);
+		ArrayList listaArticulo = (ArrayList) gestorU.obtener();
+		if(listaArticulo==null)
+			listaArticulo = new  ArrayList<>();
+		if(!listaArticulo.contains(articulo)){
+			
+			listaArticulo.add(articulo);
+			return gestorU.escribir(listaArticulo);
+		}
+		return false;
 	}
 
 	@Override
@@ -41,9 +53,6 @@ public class Altas implements IAltas {
 		GestorUnificado gestorU = new GestorUnificado(tipo);
 		return gestorU.escribir(pedido);
 	}
-
-	
-	
 
 
 }
