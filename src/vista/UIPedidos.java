@@ -13,8 +13,9 @@ import javax.swing.JScrollPane;
 
 public class UIPedidos extends JFrame {
 
-	private JPanel contentPane;
-	private JTable tablaPedidos;
+	protected JPanel contentPane;
+	protected JTable tablaPedidos;
+	protected JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -37,7 +38,6 @@ public class UIPedidos extends JFrame {
 	 */
 	public UIPedidos() {
 		setTitle("Pedidos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -52,7 +52,7 @@ public class UIPedidos extends JFrame {
 		String[] nombrecolumnas = {"ID","Cliente", "Articulos y cantidad"};
 		Object[][] datos ={{"1243", "SrNick","Pantalon,5"},{"1234", "SrNick","Camiseta,7"}};
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;

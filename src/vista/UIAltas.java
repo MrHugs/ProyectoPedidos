@@ -37,8 +37,10 @@ public class UIAltas extends JFrame {
 	protected JTextField txtNombreArticulo;
 	protected JTextField txtPrecio;
 	protected JTextField txtDni;
-	protected JTextField txtId;
 	protected JComboBox comboCliente;
+	protected JTextField txtId;
+	protected JTextArea txtDescripcionArticulo;
+	protected JTextArea txtAreaDescripcion;
 
 
 	/**
@@ -148,7 +150,7 @@ public class UIAltas extends JFrame {
 		gbc_lblDescripcionArticulo.gridy = 7;
 		panelArticulo.add(lblDescripcionArticulo, gbc_lblDescripcionArticulo);
 		
-		JTextArea txtDescripcionArticulo = new JTextArea();
+		txtDescripcionArticulo = new JTextArea();
 		GridBagConstraints gbc_txtDescripcionArticulo = new GridBagConstraints();
 		gbc_txtDescripcionArticulo.gridheight = 2;
 		gbc_txtDescripcionArticulo.gridwidth = 2;
@@ -337,7 +339,7 @@ public class UIAltas extends JFrame {
 			gbc_lblDescripcion.gridy = 5;
 			panelCliente.add(lblDescripcion, gbc_lblDescripcion);
 			
-			JTextArea txtAreaDescripcion = new JTextArea();
+			txtAreaDescripcion = new JTextArea();
 			GridBagConstraints gbc_txtAreaDescripcion = new GridBagConstraints();
 			gbc_txtAreaDescripcion.fill = GridBagConstraints.BOTH;
 			gbc_txtAreaDescripcion.insets = new Insets(0, 0, 5, 0);

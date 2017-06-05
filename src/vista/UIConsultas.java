@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 
 public class UIConsultas extends JFrame {
 
-	private JPanel contentPane;
+	protected JPanel contentPane;
 
 	/**
 	 * Launch the application.
