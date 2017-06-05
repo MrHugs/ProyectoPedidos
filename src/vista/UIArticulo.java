@@ -13,8 +13,9 @@ import javax.swing.JScrollPane;
 
 public class UIArticulo extends JFrame {
 
-	private JPanel contentPane;
-	private JTable tablaArticulo;
+	protected JPanel contentPane;
+	protected JTable tablaArticulo;
+	protected JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -37,7 +38,6 @@ public class UIArticulo extends JFrame {
 	 */
 	public UIArticulo() {
 		setTitle("Articulo");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -52,7 +52,7 @@ public class UIArticulo extends JFrame {
 		String[] nombrecolumnas = {"Identificador","Nombre", "Precio", "Descripcion"};
 		Object[][] datos ={{"343443", "Movil","700","Phone"},{"343443", "Movil","700","Phone"}};
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;
