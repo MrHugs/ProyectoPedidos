@@ -1,5 +1,6 @@
 package modelo;
 
+import java.awt.Component;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -32,9 +33,5 @@ public class Cliente implements Serializable {
 //		System.out.println("soy el equals de persona");
 		return this.dni.equals(((Cliente)obj).dni);
 	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return this.dni+"\\, "+this.nombre+"\\, "+this.descripcion;
-	}
+	
 }

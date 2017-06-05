@@ -38,7 +38,7 @@ public class testAlta {
 		
 	}
 
-	@Ignore
+	@Test
 	public void testAltaArticulo() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.articulo);
 		Articulo articulo = new Articulo("1", "palo", 20f, "UN PALOOOOO!!");
@@ -49,7 +49,7 @@ public class testAlta {
 
 	
 
-	@Ignore
+	@Test
 	public void testAltaPedido() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.pedido);
 		listaLineaPedidos.add(new lineaPedido("2", articulo2, 22));

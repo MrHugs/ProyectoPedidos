@@ -25,11 +25,11 @@ public class DAOTest {
 
 	@Before
 	public void setUp() throws Exception {
-		lista.add(new Cliente("1", "A"));
-		lista.add(new Cliente("2", "B"));
-		lista.add(new Cliente("3", "C"));
-		lista.add(new Cliente("4", "D"));
-		lista.add(new Cliente("5", "E"));
+		lista.add(new Cliente("1", "A","pos si"));
+		lista.add(new Cliente("2", "B","pos si"));
+		lista.add(new Cliente("3", "C","pos si"));
+		lista.add(new Cliente("4", "D","pos si"));
+		lista.add(new Cliente("5", "E","pos si"));
 	}
 
 	@Test
@@ -56,16 +56,16 @@ public class DAOTest {
 	public void test03GrabarO() {
 		//es mejor borrar el archivo para cada prueba
 		new File(PRUEBAO_TST).delete();
-		assertTrue(instancia.grabar(new Cliente("1", "F"), PRUEBAO_TST, UNICOO));
-		assertTrue(instancia.grabar(new Cliente("2", "G"), PRUEBAO_TST, UNICOO));
+		assertTrue(instancia.grabar(new Cliente("1", "F","pos si"), PRUEBAO_TST, UNICOO));
+		assertTrue(instancia.grabar(new Cliente("2", "G","pos si"), PRUEBAO_TST, UNICOO));
 	}
 
 	@Test
 	public void test04LeerO() {
 		//primer objeto
-		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Cliente("1", "")));
+		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Cliente("1", "mew","pos si")));
 		//segundo Objeto
-		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Cliente("2", "")));		
+		assertTrue(instancia.leer(PRUEBAO_TST, UNICOO).equals(new Cliente("2", "mew","pos si")));		
 	}
 
 }

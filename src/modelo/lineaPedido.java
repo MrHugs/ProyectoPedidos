@@ -1,6 +1,8 @@
 package modelo;
 
-public class lineaPedido {
+import java.io.Serializable;
+
+public class lineaPedido implements Serializable{
 	
 	
 String numeroLinea;

@@ -18,7 +18,7 @@ public class ParaUI extends vista.UI {
 	public ParaUI() {
 		btnAltaCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Gestor().insertar(new Cliente("1", "3"));
+				new Gestor().insertar(new Cliente("1", "Manolito","gafotasS"));
 			}
 		});
 		btnAltaArticulo.addActionListener(new ActionListener() {
@@ -28,7 +28,7 @@ public class ParaUI extends vista.UI {
 		});
 		btnAltapedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Gestor().insertar(new Pedido("1", new Cliente("1", "Manolo"), lista)); // Aqui
+				new Gestor().insertar(new Pedido("1", new Cliente("1", "Manolo","zapatilla"), lista)); // Aqui
 																							// en
 																							// vez
 																							// de

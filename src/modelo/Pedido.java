@@ -3,7 +3,7 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido  implements Serializable{
 String id;
 Cliente cliente;
 ArrayList listaLineasPedidos = new ArrayList();
@@ -15,21 +15,11 @@ public Pedido(String id, Cliente cliente, ArrayList listaLineasPedidos) {
 	this.listaLineasPedidos = listaLineasPedidos;
 }
 
+
 @Override
 public boolean equals(Object obj) {
-	if (this == obj)
-		return true;
-	if (obj == null)
-		return false;
-	if (getClass() != obj.getClass())
-		return false;
-	Pedido other = (Pedido) obj;
-	if (id == null) {
-		if (other.id != null)
-			return false;
-	} else if (!id.equals(other.id))
-		return false;
-	return true;
+//	System.out.println("soy el equals de persona");
+	return (this.id.equals(((Pedido)obj).id) && this.cliente.equals(((Pedido)obj).cliente));
 }
 
 public String getId() {
