@@ -15,9 +15,6 @@ public Pedido(String id, Cliente cliente, ArrayList listaLineasPedidos) {
 	this.listaLineasPedidos = listaLineasPedidos;
 }
 
-
-
-
 @Override
 public boolean equals(Object obj) {
 	if (this == obj)
@@ -34,9 +31,6 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
-
-
-
 
 public String getId() {
 	return id;
