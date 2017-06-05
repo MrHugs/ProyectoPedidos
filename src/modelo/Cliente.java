@@ -37,7 +37,7 @@ public class Cliente implements Serializable {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.dni+"\\, "+this.nombre+"\\, "+this.descripcion;
+
+		return this.nombre+"\\, "+this.dni+"\\, "+this.descripcion;
 	}
-	
 }

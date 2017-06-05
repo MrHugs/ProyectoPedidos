@@ -18,7 +18,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class IUConsultas extends JFrame {
+public class UIConsultas extends JFrame {
 
 	private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class IUConsultas extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					IUConsultas frame = new IUConsultas();
+					UIConsultas frame = new UIConsultas();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class IUConsultas extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IUConsultas() {
+	public UIConsultas() {
 		setTitle("Consultas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -50,24 +50,34 @@ public class IUConsultas extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnCliente = new JButton("Cliente");
-		btnCliente.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnCliente.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				IUAñadirelemento nuevaVentana = new IUAñadirelemento();
-				nuevaVentana.setVisible(true);
+			public void mouseClicked(MouseEvent e) {
+				UICliente ventanaCliente = new UICliente();
+				ventanaCliente.setVisible(true);
 			}
 		});
 		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
 		contentPane.add(btnCliente);
 		
 		JButton btnArticulo = new JButton("Articulo");
+		btnArticulo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				UIArticulo ventanaArticulo = new UIArticulo();
+				ventanaArticulo.setVisible(true);
+			}
+		});
 		contentPane.add(btnArticulo);
 		
 		JButton btnPedido = new JButton("Pedido");
+		btnPedido.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				UIPedidos ventanaPedidos = new UIPedidos();
+				ventanaPedidos.setVisible(true);
+			}
+		});
 		contentPane.add(btnPedido);
 	}
 

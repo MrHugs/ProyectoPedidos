@@ -18,8 +18,7 @@ public class Consulta implements IConsultas {
 
 	@Override
 	public Pedido consultaPedido(Pedido pedido) {
-		// TODO Auto-generated method stub
-		return pedido;
+return null;
 	}
 
 	@Override
