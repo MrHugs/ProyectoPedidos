@@ -17,9 +17,9 @@ public class Consulta implements IConsultas {
 	}
 
 	@Override
-	public boolean consultaPedido(Pedido pedido) {
+	public Pedido consultaPedido(Pedido pedido) {
 		// TODO Auto-generated method stub
-		return false;
+		return pedido;
 	}
 
 	@Override
