@@ -34,4 +34,9 @@ public class Cliente implements Serializable {
 		return this.dni.equals(((Cliente)obj).dni);
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.nombre+"\\, "+this.dni+"\\, "+this.descripcion;
+	}
 }

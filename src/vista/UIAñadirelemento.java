@@ -17,11 +17,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
-public class IUAñadirelemento extends JFrame {
+public class UIAñadirelemento extends JFrame {
 
 	private JPanel contentPane;
-	protected JComboBox comboBox;
+	protected JComboBox comboCantidad;
+	protected JComboBox comboArticulo;
+	protected JLabel lblNLinea;
 
 	/**
 	 * Launch the application.
@@ -30,7 +33,7 @@ public class IUAñadirelemento extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					IUAñadirelemento frame = new IUAñadirelemento();
+					UIAñadirelemento frame = new UIAñadirelemento();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,11 +45,12 @@ public class IUAñadirelemento extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IUAñadirelemento() {
+	public UIAñadirelemento() {
 		setTitle("A\u00F1adir elemento");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -63,7 +67,7 @@ public class IUAñadirelemento extends JFrame {
 		gbc_lblNumeroLinea.gridy = 1;
 		contentPane.add(lblNumeroLinea, gbc_lblNumeroLinea);
 		
-		JLabel lblNLinea = new JLabel();
+		lblNLinea = new JLabel();
 		GridBagConstraints gbc_lblNLinea = new GridBagConstraints();
 		gbc_lblNLinea.gridwidth = 2;
 		gbc_lblNLinea.insets = new Insets(0, 0, 5, 5);
@@ -79,14 +83,14 @@ public class IUAñadirelemento extends JFrame {
 		gbc_lblArticulo.gridy = 3;
 		contentPane.add(lblArticulo, gbc_lblArticulo);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.gridwidth = 2;
-		gbc_comboBox_1.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_1.gridx = 1;
-		gbc_comboBox_1.gridy = 3;
-		contentPane.add(comboBox_1, gbc_comboBox_1);
+		comboArticulo = new JComboBox();
+		GridBagConstraints gbc_comboArticulo = new GridBagConstraints();
+		gbc_comboArticulo.gridwidth = 2;
+		gbc_comboArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_comboArticulo.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboArticulo.gridx = 1;
+		gbc_comboArticulo.gridy = 3;
+		contentPane.add(comboArticulo, gbc_comboArticulo);
 		
 		JLabel lblCantidad = new JLabel("Cantidad");
 		GridBagConstraints gbc_lblCantidad = new GridBagConstraints();
@@ -95,14 +99,14 @@ public class IUAñadirelemento extends JFrame {
 		gbc_lblCantidad.gridy = 5;
 		contentPane.add(lblCantidad, gbc_lblCantidad);
 		
-		comboBox = new JComboBox();
-		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.gridwidth = 2;
-		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox.gridx = 1;
-		gbc_comboBox.gridy = 5;
-		contentPane.add(comboBox, gbc_comboBox);
+		comboCantidad = new JComboBox();
+		GridBagConstraints gbc_comboCantidad = new GridBagConstraints();
+		gbc_comboCantidad.gridwidth = 2;
+		gbc_comboCantidad.insets = new Insets(0, 0, 5, 5);
+		gbc_comboCantidad.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboCantidad.gridx = 1;
+		gbc_comboCantidad.gridy = 5;
+		contentPane.add(comboCantidad, gbc_comboCantidad);
 		
 		JButton btnAñadirElemento = new JButton("Añadir");
 		btnAñadirElemento.addActionListener(new ActionListener() {
