@@ -231,7 +231,7 @@ public class IUAltas extends JFrame {
 			btnAnadirPedido.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent arg0) {
-					IUAñadirelemento nuevaVentana = new IUAñadirelemento();
+					UIAñadirelemento nuevaVentana = new UIAñadirelemento();
 					nuevaVentana.setVisible(true);
 				}
 			});
