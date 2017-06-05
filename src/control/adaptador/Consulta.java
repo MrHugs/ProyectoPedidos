@@ -17,7 +17,7 @@ public class Consulta implements IConsultas {
 	}
 
 	@Override
-	public Pedido consultaPedido(Pedido pedido) {
+	public Pedido consultaPedido(String idPedido, Cliente cliente,Tipo tipo) {
 		
 return null;
 	}

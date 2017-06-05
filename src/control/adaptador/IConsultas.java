@@ -8,6 +8,6 @@ import utiles.Tipo;
 public interface IConsultas {
 
 	public Articulo consultaArticulo(String id, Tipo tipo);
-	public Pedido consultaPedido(Pedido pedido);
+	public Pedido consultaPedido(String idPedido,Cliente cliente,Tipo tipo);
 	public Cliente consultaCliente(String id, Tipo tipo);
 }

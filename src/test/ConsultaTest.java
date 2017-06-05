@@ -13,6 +13,7 @@ import control.adaptador.Consulta;
 import control.adaptador.GestorUnificado;
 import modelo.Articulo;
 import modelo.Cliente;
+import modelo.Pedido;
 import utiles.Tipo;
 
 public class ConsultaTest {
@@ -20,12 +21,18 @@ public class ConsultaTest {
 	Consulta consulta = new Consulta();
 	Altas alta = new Altas();
 	
+
+	
 	
 
 	@Ignore
 	public void testConsultaPedido() {
-		
-	}
+		Cliente cliente  = new Cliente("2", "PACO", "Mi padre");
+		ArrayList listaLineasPedidos = new ArrayList();
+		Pedido pedido = new Pedido("1", cliente, listaLineasPedidos);
+		alta.altaPedido(pedido.getId(), cliente, listaLineasPedidos, Tipo.pedidoTest);
+		assertTrue(pedido.equals(consulta.consultaPedido("1",cliente,Tipo.pedidoTest)));
+		}
 
 	@Test
 	public void testConsultaCliente() {
