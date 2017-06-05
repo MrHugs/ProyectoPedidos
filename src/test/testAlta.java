@@ -27,7 +27,7 @@ public class testAlta {
 	
 	
 	
-	@Ignore
+	@Test
 	public void testAltaCliente() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.clienteTest);
 		Cliente cliente = new Cliente("1", "Manolo Pajares","mu bonico");
@@ -38,7 +38,7 @@ public class testAlta {
 		
 	}
 
-	@Ignore
+	@Test
 	public void testAltaArticulo() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.articulo);
 		Articulo articulo = new Articulo("1", "palo", 20f, "UN PALOOOOO!!");
