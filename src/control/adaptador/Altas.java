@@ -6,10 +6,6 @@ import control.logica.Gestor;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;
-
-
-
-
 import utiles.Tipo;
 
 public class Altas implements IAltas {
