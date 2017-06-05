@@ -18,6 +18,7 @@ public class Consulta implements IConsultas {
 
 	@Override
 	public Pedido consultaPedido(Pedido pedido) {
+		
 return null;
 	}
 

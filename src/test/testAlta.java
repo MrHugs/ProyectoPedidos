@@ -32,7 +32,6 @@ public class testAlta {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.clienteTest);
 		Cliente cliente = new Cliente("1", "Manolo Pajares","mu bonico");
 		Cliente cliente2 = new Cliente("2", "xxxxxxxxxxxxx","xxxxxxxxx");
-
 		assertTrue(alta.altaCliente(cliente.getDni(), cliente.getNombre(), cliente.getDescripcion(), Tipo.clienteTest));
 		assertTrue(alta.altaCliente(cliente2.getDni(), cliente2.getNombre(), cliente2.getDescripcion(), Tipo.clienteTest));
 
@@ -44,24 +43,24 @@ public class testAlta {
 		
 	}
 
-	@Ignore
+	@Test
 	public void testAltaArticulo() {
-		GestorUnificado gestorU = new GestorUnificado(Tipo.articulo);
+		GestorUnificado gestorU = new GestorUnificado(Tipo.articuloTest);
 		Articulo articulo = new Articulo("1", "palo", 20f, "UN PALOOOOO!!");
-		assertTrue(alta.altaArticulo(articulo.getIdentificador(), articulo.getNombre(), articulo.getPrecio(), articulo.getDescripcion(), Tipo.articulo));
+		assertTrue(alta.altaArticulo(articulo.getIdentificador(), articulo.getNombre(), articulo.getPrecio(), articulo.getDescripcion(), Tipo.articuloTest));
 		ArrayList listaArticulos = (ArrayList) gestorU.obtener();
 		assertTrue(listaArticulos.contains(articulo));
 	}
 
 	
 
-	@Ignore
+	@Test
 	public void testAltaPedido() {
-		GestorUnificado gestorU = new GestorUnificado(Tipo.pedido);
+		GestorUnificado gestorU = new GestorUnificado(Tipo.pedidoTest);
 		listaLineaPedidos.add(new lineaPedido("2", articulo2, 22));
 		Cliente cliente = new Cliente("1", "Manolo Pajares","mu bonico");
 		Pedido pedido = new Pedido("1", cliente, listaLineaPedidos);
-		assertTrue(alta.altaPedido(pedido.getId(), pedido.getCliente(), pedido.getListaLineasPedidos(), Tipo.pedido));
+		assertTrue(alta.altaPedido(pedido.getId(), pedido.getCliente(), pedido.getListaLineasPedidos(), Tipo.pedidoTest));
 		assertTrue(pedido.equals((Pedido)gestorU.obtener()));
 	}
 	
