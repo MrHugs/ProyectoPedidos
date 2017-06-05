@@ -21,10 +21,10 @@ public class GestorUnificadoTest {
 		
 		instancia=new GestorUnificado(Tipo.cliente);
 		lista=new ArrayList<Cliente>();
-		lista.add(new Cliente("1", "Ataulfo"));
-		lista.add(new Cliente("2", "Humberto"));
-		lista.add(new Cliente("3", "Jeremias"));
-		lista.add(new Cliente("4", "Diocleciano"));
+		lista.add(new Cliente("1", "Ataulfo","pos si"));
+		lista.add(new Cliente("2", "Humberto","pos si"));
+		lista.add(new Cliente("3", "Jeremias","pos si"));
+		lista.add(new Cliente("4", "Diocleciano","pos si"));
 		instancia.escribir(lista);
 	}
 

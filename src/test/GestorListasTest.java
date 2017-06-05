@@ -20,16 +20,16 @@ public class GestorListasTest {
 	public void setUp() throws Exception {
 		instancia=new GestorListas();
 		lista=new ArrayList<Cliente>();
-		lista.add(new Cliente("1", "Ataulfo"));
-		lista.add(new Cliente("2", "Humberto"));
-		lista.add(new Cliente("3", "Jeremias"));
-		lista.add(new Cliente("4", "Diocleciano"));
+		lista.add(new Cliente("1", "Ataulfo","pos si"));
+		lista.add(new Cliente("2", "Humberto","pos si"));
+		lista.add(new Cliente("3", "Jeremias","pos si"));
+		lista.add(new Cliente("4", "Diocleciano","pos si"));
 		instancia.escrbirLista(lista, path);
 	}
 
 	@Test
 	public void testBorrarElemento() {
-		Cliente borrador=new Cliente("3", "");
+		Cliente borrador=new Cliente("3","Matarile","mewo");
 		assertTrue(instancia.borrarElemento(lista, borrador,path));
 		ArrayList<Cliente> miLista=instancia.obtenerLista(path);
 		System.out.println();
