@@ -31,14 +31,20 @@ public class testAlta {
 	public void testAltaCliente() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.clienteTest);
 		Cliente cliente = new Cliente("1", "Manolo Pajares","mu bonico");
+		Cliente cliente2 = new Cliente("2", "xxxxxxxxxxxxx","xxxxxxxxx");
+
 		assertTrue(alta.altaCliente(cliente.getDni(), cliente.getNombre(), cliente.getDescripcion(), Tipo.clienteTest));
+		assertTrue(alta.altaCliente(cliente2.getDni(), cliente2.getNombre(), cliente2.getDescripcion(), Tipo.clienteTest));
+
 		ArrayList listaCLientes = (ArrayList) gestorU.obtener();
-		assertTrue(listaCLientes.contains(cliente));	
+		assertTrue(listaCLientes.contains(cliente));
+		assertTrue(listaCLientes.contains(cliente2));	
+
 		
 		
 	}
 
-	@Test
+	@Ignore
 	public void testAltaArticulo() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.articulo);
 		Articulo articulo = new Articulo("1", "palo", 20f, "UN PALOOOOO!!");
@@ -49,7 +55,7 @@ public class testAlta {
 
 	
 
-	@Test
+	@Ignore
 	public void testAltaPedido() {
 		GestorUnificado gestorU = new GestorUnificado(Tipo.pedido);
 		listaLineaPedidos.add(new lineaPedido("2", articulo2, 22));

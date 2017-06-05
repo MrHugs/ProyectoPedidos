@@ -207,11 +207,11 @@ public class IUAltas extends JFrame {
 			
 			comboCliente = new JComboBox();
 			comboCliente.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					Cliente cliente = new Cliente("4", "Juan", "mi");
-					comboCliente.addItem(cliente.toString());
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("holi");
 				}
 			});
+			
 			GridBagConstraints gbc_comboCliente = new GridBagConstraints();
 			gbc_comboCliente.insets = new Insets(0, 0, 5, 5);
 			gbc_comboCliente.fill = GridBagConstraints.HORIZONTAL;

@@ -57,5 +57,8 @@ public class GestorUnificado {
 	private boolean comparar(Object comparador, Object obj) {
 		return comparador.equals(obj);
 	}
+	public void borraArchivo(){
+		dao.borrarArchivo(tipo.getRuta());
+	}
 
 }

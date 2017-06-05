@@ -140,4 +140,11 @@ public class DAO {
 		antiguo.delete();
 		return nuevo.renameTo(antiguo);
 	}
+	public void borrarArchivo(String path){
+		File archivo = new File(path);
+		if(archivo.exists()){
+			archivo.delete();
+		}
+		
+	}
 }
