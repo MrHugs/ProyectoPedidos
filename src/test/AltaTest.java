@@ -18,7 +18,7 @@ import modelo.Pedido;
 import modelo.lineaPedido;
 import utiles.Tipo;
 
-public class testAlta {
+public class AltaTest {
 
 	Altas alta = new Altas();
 	
