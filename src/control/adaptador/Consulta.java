@@ -9,17 +9,30 @@ import modelo.Articulo;
 import modelo.Pedido;
 import utiles.Tipo;
 
+
 public class Consulta implements IConsultas {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Altas alta = new Altas();
+		Consulta consulta = new Consulta();
+		Cliente cliente = new Cliente("1", "paco", "mi padre");
+		ArrayList arraysu = new ArrayList<>();
+		arraysu.add(4);
+		alta.altaCliente(cliente.getDni(), cliente.getNombre(), cliente.getDescripcion(), Tipo.cliente);
+		alta.altaPedido("5", cliente, arraysu, Tipo.pedido);
+		consulta.consultaPedido("2", cliente, Tipo.pedido);
+		
 	}
 
 	@Override
 	public Pedido consultaPedido(String idPedido, Cliente cliente,Tipo tipo) {
+		GestorUnificado gestorU = new GestorUnificado(tipo.pedido);
+		int contador=0;
+		Pedido pedido = (Pedido) gestorU.obtener();
+		System.out.println(pedido.getId());
+		//Esta mas o menos, el syso llega a hacerse
 		
-return null;
+		return null;
 	}
 
 	@Override

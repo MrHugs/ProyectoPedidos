@@ -27,14 +27,14 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 public class IUAltas extends JFrame {
-	private JPanel contentPane;
-	private JTextField txtNombre;
-	private JTable tablaCesta;
-	private JTextField txtIdentificador;
-	private JTextField txtNombreArticulo;
-	private JTextField txtPrecio;
-	private JTextField txtDni;
-	private JTextField txtId;
+	protected JPanel contentPane;
+	protected JTextField txtNombre;
+	protected JTable tablaCesta;
+	protected JTextField txtIdentificador;
+	protected JTextField txtNombreArticulo;
+	protected JTextField txtPrecio;
+	protected JTextField txtDni;
+	protected JTextField txtId;
 	protected JComboBox comboCliente;
 
 
