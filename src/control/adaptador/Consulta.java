@@ -16,18 +16,19 @@ public class Consulta implements IConsultas {
 		Altas alta = new Altas();
 		Consulta consulta = new Consulta();
 		Cliente cliente = new Cliente("1", "paco", "mi padre");
+		Cliente cliente2 = new Cliente("2", "lola", "mi padre");
+
 		ArrayList arraysu = new ArrayList<>();
 		arraysu.add(4);
 		alta.altaCliente(cliente.getDni(), cliente.getNombre(), cliente.getDescripcion(), Tipo.cliente);
-		alta.altaPedido("5", cliente, arraysu, Tipo.pedido);
-		consulta.consultaPedido("2", cliente, Tipo.pedido);
+		alta.altaPedido("6", cliente2, arraysu, Tipo.pedido);
+		consulta.consultaPedido("3", cliente, Tipo.pedido);
 		
 	}
 
 	@Override
 	public Pedido consultaPedido(String idPedido, Cliente cliente,Tipo tipo) {
 		GestorUnificado gestorU = new GestorUnificado(tipo.pedido);
-		int contador=0;
 		Pedido pedido = (Pedido) gestorU.obtener();
 		System.out.println(pedido.getId());
 		//Esta mas o menos, el syso llega a hacerse
