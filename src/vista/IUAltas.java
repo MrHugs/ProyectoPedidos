@@ -208,7 +208,7 @@ public class IUAltas extends JFrame {
 			comboCliente = new JComboBox();
 			comboCliente.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println("holi");
+					System.out.println("mew");
 				}
 			});
 			
