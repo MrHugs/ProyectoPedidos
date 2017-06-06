@@ -13,8 +13,9 @@ import javax.swing.JScrollPane;
 
 public class UICliente extends JFrame {
 
-	private JPanel contentPane;
-	private JTable tablaCliente;
+	protected JPanel contentPane;
+	protected JTable tablaCliente;
+	protected JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -37,7 +38,6 @@ public class UICliente extends JFrame {
 	 */
 	public UICliente() {
 		setTitle("Cliente");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -53,7 +53,7 @@ public class UICliente extends JFrame {
 		String[] nombrecolumnas = {"DNI","Nombre", "Descripción"};
 		Object[][] datos ={{"456365X", "SrNick","5"},{"456365X", "SrNick","7"}};
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 0;

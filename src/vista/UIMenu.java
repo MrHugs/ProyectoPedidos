@@ -15,7 +15,7 @@ import java.awt.event.MouseEvent;
 
 public class UIMenu extends JFrame {
 
-	private JPanel contentPane;
+	protected JPanel contentPane;
 
 	/**
 	 * Launch the application.

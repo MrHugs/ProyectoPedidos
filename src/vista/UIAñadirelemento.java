@@ -21,7 +21,7 @@ import java.awt.Color;
 
 public class UIAñadirelemento extends JFrame {
 
-	private JPanel contentPane;
+	protected JPanel contentPane;
 	protected JComboBox comboCantidad;
 	protected JComboBox comboArticulo;
 	protected JLabel lblNLinea;
@@ -47,7 +47,6 @@ public class UIAñadirelemento extends JFrame {
 	 */
 	public UIAñadirelemento() {
 		setTitle("A\u00F1adir elemento");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
