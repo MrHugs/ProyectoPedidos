@@ -258,7 +258,7 @@ public class UIAltas extends JFrame {
 			panelPedido.add(scrollPane, gbc_scrollPane);
 			
 			String[] nombrecolumnas = {"Articulo", "Cantidad"};
-			Object[][] datos ={{"Miau", "2"},{"Guau", "4"}};
+			Object[][] datos ={{"Miau", "2"},{"Guau", "1"}};
 				
 		
 			tablaCesta = new JTable(datos,nombrecolumnas);
