@@ -26,25 +26,7 @@ public class UIAñadirelemento extends JFrame {
 	protected JComboBox comboArticulo;
 	protected JLabel lblNLinea;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			private void syso() {
-				// TODO Auto-generated method stub
-
-			}
-			public void run() {
-				try {
-					UIAñadirelemento frame = new UIAñadirelemento();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.

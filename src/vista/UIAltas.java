@@ -43,21 +43,7 @@ public class UIAltas extends JFrame {
 	protected JTextArea txtAreaDescripcion;
 
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UIAltas frame = new UIAltas();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 
 	/**

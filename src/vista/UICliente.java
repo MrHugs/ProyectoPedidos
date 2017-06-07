@@ -17,21 +17,7 @@ public class UICliente extends JFrame {
 	protected JTable tablaCliente;
 	protected JScrollPane scrollPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UICliente frame = new UICliente();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.

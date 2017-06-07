@@ -17,21 +17,8 @@ public class UIMenu extends JFrame {
 
 	protected JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UIMenu frame = new UIMenu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
+	
 
 	/**
 	 * Create the frame.

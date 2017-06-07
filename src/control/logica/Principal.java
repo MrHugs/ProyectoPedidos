@@ -2,8 +2,9 @@ package control.logica;
 
 import java.awt.EventQueue;
 
-import control.comportamiento.ParaUI;
-import vista.UI;
+import control.comportamiento.ParaUIMenu;
+
+
 
 public class Principal {
 	/**
@@ -13,7 +14,7 @@ public class Principal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ParaUI frame = new ParaUI();
+					ParaUIMenu frame = new ParaUIMenu();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
