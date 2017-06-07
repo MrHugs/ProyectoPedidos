@@ -16,9 +16,8 @@ import java.awt.event.MouseEvent;
 public class UIMenu extends JFrame {
 
 	protected JPanel contentPane;
-
-	
-	
+	protected JButton btnAltas;
+	protected JButton btnConsultas;
 
 	/**
 	 * Create the frame.
@@ -31,26 +30,10 @@ public class UIMenu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JButton btnAltas = new JButton("Altas");
-		btnAltas.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				UIAltas ventanaAltas = new UIAltas();
-				ventanaAltas.setVisible(true);
-			}
-		});
+		btnAltas = new JButton("Altas");
 		btnAltas.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		contentPane.add(btnAltas);
-		
-		JButton btnConsultas = new JButton("Consultas");
-		btnConsultas.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				UIConsultas ventanaConsultas = new UIConsultas();
-				ventanaConsultas.setVisible(true);
-			}
-		});
+		btnConsultas = new JButton("Consultas");
 		btnConsultas.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		contentPane.add(btnConsultas);
 	}

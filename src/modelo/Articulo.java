@@ -21,6 +21,11 @@ public Articulo(String identificador, String nombre, float precio, String descri
 public boolean equals(Object obj){
 	return this.identificador.equals(((Articulo)obj).identificador);
 }
+@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return (this.nombre+","+this.precio);
+	}
 
 public String getIdentificador() {
 	return identificador;

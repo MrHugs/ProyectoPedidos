@@ -5,16 +5,26 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 
+import control.adaptador.Altas;
 import modelo.Cliente;
+import utiles.Tipo;
 import vista.UIAltas;
 
 public class ParaUIAltas extends UIAltas{
+	
+	Altas alta = new Altas();
 	public ParaUIAltas(){
-		comboCliente = new JComboBox();
-		Cliente cliente = new Cliente("4", "Juan","yu");
-		Cliente cliente2 = new Cliente("5", "p","yu");
-		comboCliente.addItem(cliente.toString());
-		comboCliente.addItem(cliente2.toString());
+	
+		
+		
+		
+		btnDarDeAltaPedido.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Cliente cliente = (Cliente) comboCliente.getSelectedItem();
+				alta.altaPedido(txtId, cliente, listaLineaPedidos, Tipo.pedido);
+			}
+		});
+		
 		
 		
 		

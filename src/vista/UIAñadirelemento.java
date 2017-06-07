@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import control.adaptador.GestorUnificado;
+import utiles.Tipo;
+
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import java.awt.FlowLayout;
@@ -16,15 +20,19 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 public class UIAñadirelemento extends JFrame {
 
 	protected JPanel contentPane;
-	protected JComboBox comboCantidad;
 	protected JComboBox comboArticulo;
 	protected JLabel lblNLinea;
+	protected JTextField textField;
+	protected JButton btnAñadirElemento;
+	GestorUnificado gestorC = new GestorUnificado(Tipo.cliente);
+	
 
 	
 
@@ -32,6 +40,9 @@ public class UIAñadirelemento extends JFrame {
 	 * Create the frame.
 	 */
 	public UIAñadirelemento() {
+		
+		
+		
 		setTitle("A\u00F1adir elemento");
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -68,7 +79,7 @@ public class UIAñadirelemento extends JFrame {
 		gbc_lblArticulo.gridy = 3;
 		contentPane.add(lblArticulo, gbc_lblArticulo);
 		
-		comboArticulo = new JComboBox();
+		comboArticulo = new JComboBox<>(((ArrayList)gestorC.obtener()).toArray());
 		GridBagConstraints gbc_comboArticulo = new GridBagConstraints();
 		gbc_comboArticulo.gridwidth = 2;
 		gbc_comboArticulo.insets = new Insets(0, 0, 5, 5);
@@ -84,24 +95,22 @@ public class UIAñadirelemento extends JFrame {
 		gbc_lblCantidad.gridy = 5;
 		contentPane.add(lblCantidad, gbc_lblCantidad);
 		
-		comboCantidad = new JComboBox();
-		GridBagConstraints gbc_comboCantidad = new GridBagConstraints();
-		gbc_comboCantidad.gridwidth = 2;
-		gbc_comboCantidad.insets = new Insets(0, 0, 5, 5);
-		gbc_comboCantidad.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboCantidad.gridx = 1;
-		gbc_comboCantidad.gridy = 5;
-		contentPane.add(comboCantidad, gbc_comboCantidad);
+		btnAñadirElemento = new JButton("Añadir");
 		
-		JButton btnAñadirElemento = new JButton("Añadir");
-		btnAñadirElemento.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.gridx = 4;
-		gbc_btnNewButton.gridy = 7;
-		contentPane.add(btnAñadirElemento, gbc_btnNewButton);
+		
+		textField = new JTextField();
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.gridwidth = 2;
+		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField.gridx = 1;
+		gbc_textField.gridy = 5;
+		contentPane.add(textField, gbc_textField);
+		textField.setColumns(10);
+		GridBagConstraints gbc_btnAñadirElemento = new GridBagConstraints();
+		gbc_btnAñadirElemento.gridx = 4;
+		gbc_btnAñadirElemento.gridy = 7;
+		contentPane.add(btnAñadirElemento, gbc_btnAñadirElemento);
 	}
 
 }

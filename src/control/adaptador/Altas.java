@@ -9,6 +9,19 @@ import modelo.Pedido;
 import utiles.Tipo;
 
 public class Altas implements IAltas {
+	public static void main(String[] args) {
+		Cliente clientes = new Cliente("1", "Paco", "mew");
+		Cliente clientes2 = new Cliente("2", "Raul", "DEW");
+		Altas alta = new Altas();
+		alta.altaCliente(clientes.getNombre(), clientes.getDni(), clientes.getDescripcion(), Tipo.cliente);
+		alta.altaCliente(clientes2.getNombre(), clientes2.getDni(), clientes2.getDescripcion(), Tipo.cliente);
+
+		alta.altaArticulo("12", "maracas", 2000f, "suenan", Tipo.articulo);
+		alta.altaArticulo("2", "mas", 20f, "suen", Tipo.articulo);
+
+		
+		
+	}
 
 
 	@Override
