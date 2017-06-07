@@ -31,6 +31,10 @@ public class UIAñadirelemento extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			private void syso() {
+				// TODO Auto-generated method stub
+
+			}
 			public void run() {
 				try {
 					UIAñadirelemento frame = new UIAñadirelemento();
