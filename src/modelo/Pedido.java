@@ -19,7 +19,7 @@ public Pedido(String id, Cliente cliente, ArrayList listaLineasPedidos) {
 @Override
 public boolean equals(Object obj) {
 //	System.out.println("soy el equals de persona");
-	return (this.id.equals(((Pedido)obj).id) && this.cliente.equals(((Pedido)obj).cliente));
+	return (this.id.equals(((Pedido)obj).id));
 }
 
 public String getId() {

@@ -107,6 +107,43 @@ public class DAO {
 		}
 		return socio;
 	}
+	public Object leerPedido(String path, boolean unico) {
+		File archivo = new File(path);
+		Object socio = null;
+		try {
+			if (!archivo.exists()) {
+				archivo.createNewFile();
+			}
+			// este es el if que controla si el flujo debe abrirse o no
+			if (unico || adaptadorLectura == null) {
+				if (archivo.length() > 0) {
+					FileInputStream flujoEntrada = new FileInputStream(archivo);
+					adaptadorLectura = new ObjectInputStream(flujoEntrada);
+					socio = adaptadorLectura.readObject();
+					// este controla si debe cerrarse o no
+					if (unico)
+						adaptadorLectura.close();
+				}
+			} else {
+				// si tras una operacion de lectura el resultado ha sido null
+				// implica ue el flujo ha llegado al final del fichero
+				if (socio == null) {
+					adaptadorLectura.close();
+				}
+			}
+
+		} catch (FileNotFoundException e) {
+			if (Constantes.errores)
+				e.printStackTrace();
+		} catch (IOException e) {
+			if (Constantes.errores)
+				e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			if (Constantes.errores)
+				e.printStackTrace();
+		}
+		return socio;
+	}
 
 	public void cerrar() {
 		try {

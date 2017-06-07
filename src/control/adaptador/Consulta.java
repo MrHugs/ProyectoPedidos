@@ -1,5 +1,6 @@
 package control.adaptador;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -8,6 +9,7 @@ import modelo.Cliente;
 import modelo.Articulo;
 import modelo.Pedido;
 import utiles.Tipo;
+import utiles.Varios;
 
 
 public class Consulta implements IConsultas {
@@ -29,11 +31,13 @@ public class Consulta implements IConsultas {
 	@Override
 	public Pedido consultaPedido(String idPedido, Cliente cliente,Tipo tipo) {
 		GestorUnificado gestorU = new GestorUnificado(tipo.pedido);
-		Pedido pedido = (Pedido) gestorU.obtener();
-		System.out.println(pedido.getId());
-		//Esta mas o menos, el syso llega a hacerse
-		
-		return null;
+		Pedido pedidobusca = new Pedido(idPedido, cliente, new ArrayList());
+		File archivo = new File(tipo.getRuta());
+		if(archivo.exists()){
+			Pedido pedidoEncontrado = (Pedido) new Varios().leerPedido(tipo.getRuta(), pedidobusca, true);
+			return pedidoEncontrado;
+		}
+		return new Pedido("fail", new Cliente("", "", ""), new ArrayList<>());
 	}
 
 	@Override

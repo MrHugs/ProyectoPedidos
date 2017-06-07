@@ -25,7 +25,7 @@ public class ConsultaTest {
 	
 	
 
-	@Ignore
+	@Test
 	public void testConsultaPedido() {
 		Cliente cliente  = new Cliente("2", "PACO", "Mi padre");
 		ArrayList listaLineasPedidos = new ArrayList();
