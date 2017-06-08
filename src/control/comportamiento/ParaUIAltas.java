@@ -23,7 +23,7 @@ public class ParaUIAltas extends UIAltas{
 				Cliente cliente = (Cliente) comboCliente.getSelectedItem();
 				alta.altaPedido(txtId, cliente, listaLineaPedidos, Tipo.pedido);
 				System.out.println("soy un syso");
-				System.out.println("soy un syso");
+				System.out.println("toma 3");
 
 			}
 			
