@@ -39,13 +39,14 @@ public class UIAltas extends JFrame {
 	protected JTable tablaCesta;
 	protected JTextField txtIdentificador;
 	protected JTextField txtNombreArticulo;
-	protected JTextField txtPrecio;
 	protected JTextField txtDni;
 	protected JComboBox comboCliente;
 	protected JTextField txtId;
 	protected JTextArea txtDescripcionArticulo;
 	protected JTextArea txtAreaDescripcion;
 	protected JButton btnDarDeAltaPedido;
+	protected JButton btnDarDeAltaArticulo;
+	protected JTextArea txtPrecioChachi;
 
 	/**
 	 * Create the frame.
@@ -111,15 +112,15 @@ public class UIAltas extends JFrame {
 		gbc_lblPrecio.gridx = 2;
 		gbc_lblPrecio.gridy = 5;
 		panelArticulo.add(lblPrecio, gbc_lblPrecio);
-
-		txtPrecio = new JTextField();
-		GridBagConstraints gbc_txtPrecio = new GridBagConstraints();
-		gbc_txtPrecio.insets = new Insets(0, 0, 5, 5);
-		gbc_txtPrecio.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtPrecio.gridx = 5;
-		gbc_txtPrecio.gridy = 5;
-		panelArticulo.add(txtPrecio, gbc_txtPrecio);
-		txtPrecio.setColumns(10);
+		
+		JTextField txtPrecioChachi = new JTextField();
+		GridBagConstraints gbc_txtPrecioChachi = new GridBagConstraints();
+		gbc_txtPrecioChachi.insets = new Insets(0, 0, 5, 5);
+		gbc_txtPrecioChachi.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtPrecioChachi.gridx = 5;
+		gbc_txtPrecioChachi.gridy = 5;
+		panelArticulo.add(txtPrecioChachi, gbc_txtPrecioChachi);
+		txtPrecioChachi.setColumns(10);
 
 		JLabel lblEuros = new JLabel("\u20AC");
 		GridBagConstraints gbc_lblEuros = new GridBagConstraints();
@@ -146,7 +147,9 @@ public class UIAltas extends JFrame {
 		gbc_txtDescripcionArticulo.gridy = 7;
 		panelArticulo.add(txtDescripcionArticulo, gbc_txtDescripcionArticulo);
 
-		JButton btnDarDeAltaArticulo = new JButton("Dar de alta");
+		btnDarDeAltaArticulo = new JButton("Dar de alta");
+		
+		
 		GridBagConstraints gbc_btnDarDeAltaArticulo = new GridBagConstraints();
 		gbc_btnDarDeAltaArticulo.insets = new Insets(0, 0, 5, 5);
 		gbc_btnDarDeAltaArticulo.gridx = 6;

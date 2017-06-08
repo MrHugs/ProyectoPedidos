@@ -18,15 +18,10 @@ public class ParaUIAltas extends UIAltas{
 		
 		
 		
-		btnDarDeAltaPedido.addActionListener(new ActionListener() {
+		btnDarDeAltaArticulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cliente cliente = (Cliente) comboCliente.getSelectedItem();
-				alta.altaPedido(txtId, cliente, listaLineaPedidos, Tipo.pedido);
-				System.out.println("soy un syso");
-				System.out.println("toma 3");
-
+				alta.altaArticulo(txtIdentificador.getText(), txtNombreArticulo.getText(), Float.parseFloat(txtPrecioChachi.getText()), txtDescripcionArticulo.getText(), Tipo.articulo);
 			}
-			
 		});
 		
 		

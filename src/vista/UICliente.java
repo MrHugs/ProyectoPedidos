@@ -14,15 +14,17 @@ import javax.swing.JButton;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class UICliente extends JFrame {
 
 	protected JPanel contentPane;
 	protected JTable tablaCliente;
 	protected JScrollPane scrollPane;
-	private JButton btnBuscar;
-	private JTextField textField;
-	private JLabel lblId;
+	protected JButton btnBuscar;
+	protected JTextField txtBuscaCliente;
+	protected JLabel lblId;
 
 	
 
@@ -54,14 +56,14 @@ public class UICliente extends JFrame {
 		gbc_lblId.gridy = 0;
 		contentPane.add(lblId, gbc_lblId);
 		
-		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 0);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 1;
-		gbc_textField.gridy = 0;
-		contentPane.add(textField, gbc_textField);
-		textField.setColumns(10);
+		txtBuscaCliente = new JTextField();
+		GridBagConstraints gbc_txtBuscaCliente = new GridBagConstraints();
+		gbc_txtBuscaCliente.insets = new Insets(0, 0, 5, 0);
+		gbc_txtBuscaCliente.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtBuscaCliente.gridx = 1;
+		gbc_txtBuscaCliente.gridy = 0;
+		contentPane.add(txtBuscaCliente, gbc_txtBuscaCliente);
+		txtBuscaCliente.setColumns(10);
 		
 		scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
@@ -76,6 +78,7 @@ public class UICliente extends JFrame {
 		scrollPane.setViewportView(tablaCliente);
 		
 		btnBuscar = new JButton("Buscar");
+		
 		GridBagConstraints gbc_btnBuscar = new GridBagConstraints();
 		gbc_btnBuscar.gridx = 1;
 		gbc_btnBuscar.gridy = 3;

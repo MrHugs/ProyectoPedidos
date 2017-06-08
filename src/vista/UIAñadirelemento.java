@@ -31,7 +31,7 @@ public class UIAñadirelemento extends JFrame {
 	protected JLabel lblNLinea;
 	protected JTextField textField;
 	protected JButton btnAñadirElemento;
-	GestorUnificado gestorC = new GestorUnificado(Tipo.cliente);
+	GestorUnificado gestorA = new GestorUnificado(Tipo.articulo);
 	
 
 	
@@ -79,7 +79,7 @@ public class UIAñadirelemento extends JFrame {
 		gbc_lblArticulo.gridy = 3;
 		contentPane.add(lblArticulo, gbc_lblArticulo);
 		
-		comboArticulo = new JComboBox<>(((ArrayList)gestorC.obtener()).toArray());
+		comboArticulo = new JComboBox<>(((ArrayList)gestorA.obtener()).toArray());
 		GridBagConstraints gbc_comboArticulo = new GridBagConstraints();
 		gbc_comboArticulo.gridwidth = 2;
 		gbc_comboArticulo.insets = new Insets(0, 0, 5, 5);
