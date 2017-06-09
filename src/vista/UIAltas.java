@@ -35,18 +35,19 @@ import java.awt.Color;
 
 public class UIAltas extends JFrame {
 	protected JPanel contentPane;
-	protected JTextField txtNombre;
+	protected JTextField txtNombreCliente;
 	protected JTable tablaCesta;
-	protected JTextField txtIdentificador;
+	protected JTextField txtIdArticulo;
 	protected JTextField txtNombreArticulo;
-	protected JTextField txtDni;
+	protected JTextField txtDniCliente;
 	protected JComboBox comboCliente;
-	protected JTextField txtId;
+	protected JTextField txtIdPedido;
 	protected JTextArea txtDescripcionArticulo;
-	protected JTextArea txtAreaDescripcion;
+	protected JTextArea txtDescripcionCliente;
 	protected JButton btnDarDeAltaPedido;
 	protected JButton btnDarDeAltaArticulo;
 	protected JTextArea txtPrecioChachi;
+	protected JButton btnDardealtaCliente;
 
 	/**
 	 * Create the frame.
@@ -79,15 +80,15 @@ public class UIAltas extends JFrame {
 		gbc_lblIdentificador.gridy = 1;
 		panelArticulo.add(lblIdentificador, gbc_lblIdentificador);
 
-		txtIdentificador = new JTextField();
-		GridBagConstraints gbc_txtIdentificador = new GridBagConstraints();
-		gbc_txtIdentificador.gridwidth = 2;
-		gbc_txtIdentificador.insets = new Insets(0, 0, 5, 5);
-		gbc_txtIdentificador.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtIdentificador.gridx = 5;
-		gbc_txtIdentificador.gridy = 1;
-		panelArticulo.add(txtIdentificador, gbc_txtIdentificador);
-		txtIdentificador.setColumns(10);
+		txtIdArticulo = new JTextField();
+		GridBagConstraints gbc_txtIdArticulo = new GridBagConstraints();
+		gbc_txtIdArticulo.gridwidth = 2;
+		gbc_txtIdArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_txtIdArticulo.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtIdArticulo.gridx = 5;
+		gbc_txtIdArticulo.gridy = 1;
+		panelArticulo.add(txtIdArticulo, gbc_txtIdArticulo);
+		txtIdArticulo.setColumns(10);
 
 		JLabel lblNombreArticulo = new JLabel("Nombre");
 		GridBagConstraints gbc_lblNombreArticulo = new GridBagConstraints();
@@ -113,14 +114,14 @@ public class UIAltas extends JFrame {
 		gbc_lblPrecio.gridy = 5;
 		panelArticulo.add(lblPrecio, gbc_lblPrecio);
 		
-		JTextField txtPrecioChachi = new JTextField();
-		GridBagConstraints gbc_txtPrecioChachi = new GridBagConstraints();
-		gbc_txtPrecioChachi.insets = new Insets(0, 0, 5, 5);
-		gbc_txtPrecioChachi.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtPrecioChachi.gridx = 5;
-		gbc_txtPrecioChachi.gridy = 5;
-		panelArticulo.add(txtPrecioChachi, gbc_txtPrecioChachi);
-		txtPrecioChachi.setColumns(10);
+		JTextField txtPrecioArticulo = new JTextField();
+		GridBagConstraints gbc_txtPrecioArticulo = new GridBagConstraints();
+		gbc_txtPrecioArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_txtPrecioArticulo.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtPrecioArticulo.gridx = 5;
+		gbc_txtPrecioArticulo.gridy = 5;
+		panelArticulo.add(txtPrecioArticulo, gbc_txtPrecioArticulo);
+		txtPrecioArticulo.setColumns(10);
 
 		JLabel lblEuros = new JLabel("\u20AC");
 		GridBagConstraints gbc_lblEuros = new GridBagConstraints();
@@ -180,14 +181,14 @@ public class UIAltas extends JFrame {
 		gbc_lblId.gridy = 0;
 		panelPedido.add(lblId, gbc_lblId);
 
-		txtId = new JTextField();
-		GridBagConstraints gbc_txtId = new GridBagConstraints();
-		gbc_txtId.insets = new Insets(0, 0, 5, 5);
-		gbc_txtId.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtId.gridx = 1;
-		gbc_txtId.gridy = 0;
-		panelPedido.add(txtId, gbc_txtId);
-		txtId.setColumns(10);
+		txtIdPedido = new JTextField();
+		GridBagConstraints gbc_txtIdPedido = new GridBagConstraints();
+		gbc_txtIdPedido.insets = new Insets(0, 0, 5, 5);
+		gbc_txtIdPedido.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtIdPedido.gridx = 1;
+		gbc_txtIdPedido.gridy = 0;
+		panelPedido.add(txtIdPedido, gbc_txtIdPedido);
+		txtIdPedido.setColumns(10);
 
 		JLabel lblCliente = new JLabel("Cliente");
 		GridBagConstraints gbc_lblCliente = new GridBagConstraints();
@@ -298,15 +299,15 @@ public class UIAltas extends JFrame {
 		gbc_lblDni.gridy = 1;
 		panelCliente.add(lblDni, gbc_lblDni);
 
-		txtDni = new JTextField();
-		GridBagConstraints gbc_txtDni = new GridBagConstraints();
-		gbc_txtDni.gridwidth = 2;
-		gbc_txtDni.insets = new Insets(0, 0, 5, 5);
-		gbc_txtDni.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtDni.gridx = 3;
-		gbc_txtDni.gridy = 1;
-		panelCliente.add(txtDni, gbc_txtDni);
-		txtDni.setColumns(10);
+		txtDniCliente = new JTextField();
+		GridBagConstraints gbc_txtDniCliente = new GridBagConstraints();
+		gbc_txtDniCliente.gridwidth = 2;
+		gbc_txtDniCliente.insets = new Insets(0, 0, 5, 5);
+		gbc_txtDniCliente.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtDniCliente.gridx = 3;
+		gbc_txtDniCliente.gridy = 1;
+		panelCliente.add(txtDniCliente, gbc_txtDniCliente);
+		txtDniCliente.setColumns(10);
 
 		JLabel lblNombre = new JLabel("Nombre");
 		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
@@ -316,16 +317,16 @@ public class UIAltas extends JFrame {
 		gbc_lblNombre.gridy = 3;
 		panelCliente.add(lblNombre, gbc_lblNombre);
 
-		txtNombre = new JTextField();
-		GridBagConstraints gbc_txtNombre = new GridBagConstraints();
-		gbc_txtNombre.anchor = GridBagConstraints.NORTH;
-		gbc_txtNombre.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
-		gbc_txtNombre.gridwidth = 2;
-		gbc_txtNombre.gridx = 3;
-		gbc_txtNombre.gridy = 3;
-		panelCliente.add(txtNombre, gbc_txtNombre);
-		txtNombre.setColumns(10);
+		txtNombreCliente = new JTextField();
+		GridBagConstraints gbc_txtNombreCliente = new GridBagConstraints();
+		gbc_txtNombreCliente.anchor = GridBagConstraints.NORTH;
+		gbc_txtNombreCliente.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtNombreCliente.insets = new Insets(0, 0, 5, 5);
+		gbc_txtNombreCliente.gridwidth = 2;
+		gbc_txtNombreCliente.gridx = 3;
+		gbc_txtNombreCliente.gridy = 3;
+		panelCliente.add(txtNombreCliente, gbc_txtNombreCliente);
+		txtNombreCliente.setColumns(10);
 
 		JLabel lblDescripcion = new JLabel("Descripcion");
 		GridBagConstraints gbc_lblDescripcion = new GridBagConstraints();
@@ -337,20 +338,18 @@ public class UIAltas extends JFrame {
 		gbc_lblDescripcion.gridy = 5;
 		panelCliente.add(lblDescripcion, gbc_lblDescripcion);
 
-		txtAreaDescripcion = new JTextArea();
-		GridBagConstraints gbc_txtAreaDescripcion = new GridBagConstraints();
-		gbc_txtAreaDescripcion.fill = GridBagConstraints.BOTH;
-		gbc_txtAreaDescripcion.insets = new Insets(0, 0, 5, 0);
-		gbc_txtAreaDescripcion.gridwidth = 3;
-		gbc_txtAreaDescripcion.gridx = 4;
-		gbc_txtAreaDescripcion.gridy = 5;
-		panelCliente.add(txtAreaDescripcion, gbc_txtAreaDescripcion);
+		txtDescripcionCliente = new JTextArea();
+		GridBagConstraints gbc_txtDescripcionCliente = new GridBagConstraints();
+		gbc_txtDescripcionCliente.fill = GridBagConstraints.BOTH;
+		gbc_txtDescripcionCliente.insets = new Insets(0, 0, 5, 0);
+		gbc_txtDescripcionCliente.gridwidth = 3;
+		gbc_txtDescripcionCliente.gridx = 4;
+		gbc_txtDescripcionCliente.gridy = 5;
+		panelCliente.add(txtDescripcionCliente, gbc_txtDescripcionCliente);
 
-		JButton btnDardealtaCliente = new JButton("Dar de Alta");
-		btnDardealtaCliente.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		btnDardealtaCliente = new JButton("Dar de Alta");
+		
+		
 		GridBagConstraints gbc_btnDardealtaCliente = new GridBagConstraints();
 		gbc_btnDardealtaCliente.anchor = GridBagConstraints.NORTH;
 		gbc_btnDardealtaCliente.fill = GridBagConstraints.HORIZONTAL;

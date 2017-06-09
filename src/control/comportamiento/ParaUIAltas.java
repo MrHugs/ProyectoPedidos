@@ -12,17 +12,20 @@ import vista.UIAltas;
 
 public class ParaUIAltas extends UIAltas{
 	
-	Altas alta = new Altas();
+	
+	
 	public ParaUIAltas(){
 	
+		Altas alta = new Altas();
 		
-		
-		
-		btnDarDeAltaArticulo.addActionListener(new ActionListener() {
+		btnDardealtaCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				alta.altaArticulo(txtIdentificador.getText(), txtNombreArticulo.getText(), Float.parseFloat(txtPrecioChachi.getText()), txtDescripcionArticulo.getText(), Tipo.articulo);
+				alta.altaCliente(txtDniCliente.getText(), txtNombreCliente.getText(), txtDescripcionCliente.getText(), Tipo.cliente);
+				
 			}
 		});
+		
+		
 		
 		
 		

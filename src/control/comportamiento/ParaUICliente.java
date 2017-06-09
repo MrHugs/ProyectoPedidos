@@ -4,23 +4,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import control.adaptador.Consulta;
+import modelo.Cliente;
 import utiles.Tipo;
 import vista.UICliente;
 
 public class ParaUICliente extends UICliente {
-	Consulta consulta = new Consulta();
+	
 
 	public ParaUICliente(){
-		
-		
-		
+		Consulta consulta = new Consulta();
 		btnBuscar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				consulta.consultaCliente(txtBuscaCliente.getText(), Tipo.cliente);
+			public void actionPerformed(ActionEvent e) {
+				Cliente cliente = consulta.consultaCliente(txtBuscaCliente.getText().toString(), Tipo.cliente);
+				txtClienteEncontrado.setText("DNI: "+cliente.getDni()+" 	Nombre: "+cliente.getNombre()+"		Descripcion: "+cliente.getDescripcion());
 			}
 		});
 		
 		
+		
+		
+		
+	
 		
 		
 		

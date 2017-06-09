@@ -11,7 +11,6 @@ import modelo.Pedido;
 import utiles.Tipo;
 import utiles.Varios;
 
-
 public class Consulta implements IConsultas {
 
 	public static void main(String[] args) {
@@ -21,19 +20,18 @@ public class Consulta implements IConsultas {
 		Cliente cliente2 = new Cliente("2", "lola", "mi padre");
 
 		ArrayList arraysu = new ArrayList<>();
-		arraysu.add(4);
 		alta.altaCliente(cliente.getDni(), cliente.getNombre(), cliente.getDescripcion(), Tipo.cliente);
 		alta.altaPedido("6", cliente2, arraysu, Tipo.pedido);
 		consulta.consultaPedido("3", cliente, Tipo.pedido);
-		
+
 	}
 
 	@Override
-	public Pedido consultaPedido(String idPedido, Cliente cliente,Tipo tipo) {
+	public Pedido consultaPedido(String idPedido, Cliente cliente, Tipo tipo) {
 		GestorUnificado gestorU = new GestorUnificado(tipo.pedido);
 		Pedido pedidobusca = new Pedido(idPedido, cliente, new ArrayList());
 		File archivo = new File(tipo.getRuta());
-		if(archivo.exists()){
+		if (archivo.exists()) {
 			Pedido pedidoEncontrado = (Pedido) new Varios().leerPedido(tipo.getRuta(), pedidobusca, true);
 			return pedidoEncontrado;
 		}
@@ -42,26 +40,33 @@ public class Consulta implements IConsultas {
 
 	@Override
 	public Cliente consultaCliente(String id, Tipo tipo) {
+		
 		Cliente cliente = new Cliente(id, "Manolito", "Gafotas");
 		GestorUnificado gestorU = new GestorUnificado(tipo);
 		ArrayList listaCliente = (ArrayList) gestorU.obtener();
-		if (listaCliente.contains(cliente)) {
-			int posicion = listaCliente.indexOf(cliente);
-			return (Cliente) listaCliente.get(posicion);
-		} else {
-			return null;
+
+		for (Iterator iterator = listaCliente.iterator(); iterator.hasNext();) {
+			Cliente clienteintermedio2 = (Cliente) iterator.next();
+			if (clienteintermedio2.equals(cliente)) {
+				return clienteintermedio2;
+			}
 		}
+		return new Cliente("NoExiste", "NoExiste", "NoExiste");
 	}
 
 	@Override
 	public Articulo consultaArticulo(String id, Tipo tipo) {
-		Articulo articulo = new Articulo(id,"Manolito",54f, "Gafotas");
-		GestorUnificado gestorU = new GestorUnificado(tipo);
-		ArrayList listaArticulo = (ArrayList) gestorU.obtener();
-		if (listaArticulo.contains(articulo)) {
-			int posicion = listaArticulo.indexOf(articulo);
-			return (Articulo) listaArticulo.get(posicion);
+
+	Articulo articulo = new Articulo(id, "Jose", 666f, "MeDuelenLosOjos");
+	GestorUnificado gestorU = new GestorUnificado(tipo);
+	ArrayList listaArticulo = (ArrayList) gestorU.obtener();
+
+	for (Iterator iterator = listaArticulo.iterator(); iterator.hasNext();) {
+		Articulo articuloIntermedio = (Articulo) iterator.next();
+		if (articuloIntermedio.equals(articulo)) {
+			return articuloIntermedio;
 		}
-		return null;
+	}
+	return new Articulo("NoExiste", "NoExiste",6282633f, "NoExiste");
 	}
 }
