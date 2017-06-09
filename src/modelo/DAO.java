@@ -41,7 +41,7 @@ public class DAO {
 			}
 			// este flujo es de sobreescritura
 			// flujoW = new FileOutputStream(archivo);
-			// este aÃ±ade
+			// este añade
 			flujoW = new FileOutputStream(archivo, !unico);
 			if (unico || inicial)
 				adaptadorW = new ObjectOutputStream(flujoW);

@@ -19,6 +19,9 @@ public class Altas implements IAltas {
 		alta.altaArticulo("1", "maracas", 2000f, "suenan", Tipo.articulo);
 		alta.altaArticulo("2", "Vaso", 1.25f, "cristal", Tipo.articulo);
 
+		alta.altaPedido("1", clientes, new ArrayList(), Tipo.pedido);
+		alta.altaPedido("2", clientes2, new ArrayList(), Tipo.pedido);
+
 		
 		
 	}
