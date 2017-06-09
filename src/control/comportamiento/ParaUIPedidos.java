@@ -1,11 +1,13 @@
 package control.comportamiento;
 
-import control.adaptador.Consulta;
 import modelo.Cliente;
 import modelo.Pedido;
 import utiles.Tipo;
 import vista.UIPedidos;
 import java.awt.event.ActionListener;
+
+import control.logica.Consulta;
+
 import java.awt.event.ActionEvent;
 
 public class ParaUIPedidos extends UIPedidos {

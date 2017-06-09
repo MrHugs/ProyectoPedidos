@@ -1,8 +1,8 @@
-package control.adaptador;
+package control.logica;
 
 import java.util.ArrayList;
 
-import control.logica.Gestor;
+import control.adaptador.GestorUnificado;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;

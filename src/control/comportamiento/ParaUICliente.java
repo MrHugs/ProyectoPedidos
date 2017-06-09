@@ -3,7 +3,7 @@ package control.comportamiento;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import control.adaptador.Consulta;
+import control.logica.Consulta;
 import modelo.Cliente;
 import utiles.Tipo;
 import vista.UICliente;

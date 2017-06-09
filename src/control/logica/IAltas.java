@@ -1,4 +1,4 @@
-package control.adaptador;
+package control.logica;
 
 import java.util.ArrayList;
 

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import Logica.antigua.GestorListas;
 import control.adaptador.GestorUnificado;
 import modelo.Cliente;
 

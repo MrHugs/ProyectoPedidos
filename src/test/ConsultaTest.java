@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import control.adaptador.Altas;
-import control.adaptador.Consulta;
 import control.adaptador.GestorUnificado;
+import control.logica.Altas;
+import control.logica.Consulta;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Pedido;

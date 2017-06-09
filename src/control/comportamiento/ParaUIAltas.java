@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 
-import control.adaptador.Altas;
+import control.logica.Altas;
 import modelo.Cliente;
 import utiles.Tipo;
 import vista.UIAltas;

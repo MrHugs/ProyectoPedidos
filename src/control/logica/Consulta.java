@@ -1,9 +1,10 @@
-package control.adaptador;
+package control.logica;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import control.adaptador.GestorUnificado;
 import modelo.Articulo;
 import modelo.Cliente;
 import modelo.Articulo;
