@@ -20,6 +20,7 @@ public class ParaUIAltas extends UIAltas{
 		
 	
 		Altas alta = new Altas();
+		ArrayList listaPedidos = new ArrayList();
 		
 		btnDardealtaCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -36,9 +37,17 @@ public class ParaUIAltas extends UIAltas{
 			}
 		});
 		
+		btnAnadirPedido.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for (int i = 0; i < Integer.parseInt(txtCantidadArticulo.getText()); i++) {
+					listaPedidos.add(comboArticulo.getSelectedItem());
+				}
+			}
+		});
+		
 		btnDarDeAltaPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				alta.altaPedido(txtIdPedido.getText(),(Cliente) comboCliente.getSelectedItem(), new ArrayList<>(), Tipo.pedido);
+				alta.altaPedido(txtIdPedido.getText(),(Cliente) comboCliente.getSelectedItem(), listaPedidos, Tipo.pedido);
 				lblInfoPedido.setText("Pedido dado de alta");
 			}
 			//Falta añadirlineasAlPedido

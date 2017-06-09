@@ -54,6 +54,7 @@ public class UIAltas extends JFrame {
 	protected JLabel lblInfpCliente;
 	protected JLabel lblInfoPedido;
 	protected JLabel lblInformacionArticulo;
+	protected JButton btnAnadirPedido;
 
 	/**
 	 * Create the frame.
@@ -222,7 +223,8 @@ public class UIAltas extends JFrame {
 		gbc_comboCliente.gridy = 1;
 
 		
-				JButton btnAnadirPedido = new JButton("A\u00F1adir elemento al pedido");
+				btnAnadirPedido = new JButton("A\u00F1adir elemento al pedido");
+				
 						
 					
 						 ComboClienteChachi = new JComboBox<>(((ArrayList)gestorC.obtener()).toArray());
