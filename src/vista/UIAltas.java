@@ -48,11 +48,20 @@ public class UIAltas extends JFrame {
 	protected JButton btnDarDeAltaArticulo;
 	protected JTextArea txtPrecioChachi;
 	protected JButton btnDardealtaCliente;
+	protected JComboBox comboArticulo;
+	protected JTextField txtCantidadArticulo;
+	protected JComboBox ComboClienteChachi;
+	protected JLabel lblInfpCliente;
+	protected JLabel lblInfoPedido;
+	protected JLabel lblInformacionArticulo;
 
 	/**
 	 * Create the frame.
 	 */
 	public UIAltas() {
+		GestorUnificado gestorA = new GestorUnificado(Tipo.articulo);
+		GestorUnificado gestorC = new GestorUnificado(Tipo.cliente);
+
 		setTitle("Altas");
 		setBounds(100, 100, 584, 499);
 		contentPane = new JPanel();
@@ -147,8 +156,16 @@ public class UIAltas extends JFrame {
 		gbc_txtDescripcionArticulo.gridx = 5;
 		gbc_txtDescripcionArticulo.gridy = 7;
 		panelArticulo.add(txtDescripcionArticulo, gbc_txtDescripcionArticulo);
+		
+		lblInformacionArticulo = new JLabel("");
+		GridBagConstraints gbc_lblInformacionArticulo = new GridBagConstraints();
+		gbc_lblInformacionArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_lblInformacionArticulo.gridx = 5;
+		gbc_lblInformacionArticulo.gridy = 11;
+		panelArticulo.add(lblInformacionArticulo, gbc_lblInformacionArticulo);
 
 		btnDarDeAltaArticulo = new JButton("Dar de alta");
+		
 		
 		
 		GridBagConstraints gbc_btnDarDeAltaArticulo = new GridBagConstraints();
@@ -156,13 +173,6 @@ public class UIAltas extends JFrame {
 		gbc_btnDarDeAltaArticulo.gridx = 6;
 		gbc_btnDarDeAltaArticulo.gridy = 13;
 		panelArticulo.add(btnDarDeAltaArticulo, gbc_btnDarDeAltaArticulo);
-
-		JButton btnCancelarArticulo = new JButton("Cancelar");
-		GridBagConstraints gbc_btnCancelarArticulo = new GridBagConstraints();
-		gbc_btnCancelarArticulo.insets = new Insets(0, 0, 5, 0);
-		gbc_btnCancelarArticulo.gridx = 7;
-		gbc_btnCancelarArticulo.gridy = 13;
-		panelArticulo.add(btnCancelarArticulo, gbc_btnCancelarArticulo);
 
 		JPanel panelPedido = new JPanel();
 		panelDePestañas.addTab("AltaPedido", null, panelPedido, null);
@@ -192,6 +202,7 @@ public class UIAltas extends JFrame {
 
 		JLabel lblCliente = new JLabel("Cliente");
 		GridBagConstraints gbc_lblCliente = new GridBagConstraints();
+		gbc_lblCliente.anchor = GridBagConstraints.EAST;
 		gbc_lblCliente.insets = new Insets(0, 0, 5, 5);
 		gbc_lblCliente.gridx = 0;
 		gbc_lblCliente.gridy = 1;
@@ -199,8 +210,7 @@ public class UIAltas extends JFrame {
 
 		
 		//rellenar el combobox
-		GestorUnificado gestorC = new GestorUnificado(Tipo.cliente);
-		comboCliente = new JComboBox<>(((ArrayList)gestorC.obtener()).toArray());
+		
 		
 		
 		
@@ -211,62 +221,97 @@ public class UIAltas extends JFrame {
 		gbc_comboCliente.gridx = 1;
 		gbc_comboCliente.gridy = 1;
 
-		panelPedido.add(comboCliente, gbc_comboCliente);
-
-		JLabel lblCesta = new JLabel("Cesta");
-		GridBagConstraints gbc_lblCesta = new GridBagConstraints();
-		gbc_lblCesta.fill = GridBagConstraints.HORIZONTAL;
-		gbc_lblCesta.insets = new Insets(0, 0, 5, 5);
-		gbc_lblCesta.gridx = 0;
-		gbc_lblCesta.gridy = 2;
-		panelPedido.add(lblCesta, gbc_lblCesta);
-
-		JButton btnAnadirPedido = new JButton("A\u00F1adir elemento al pedido");
-		btnAnadirPedido.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				UIAñadirelemento nuevaVentana = new UIAñadirelemento();
-				nuevaVentana.setVisible(true);
-			}
-		});
-		GridBagConstraints gbc_btnAnadirPedido = new GridBagConstraints();
-		gbc_btnAnadirPedido.insets = new Insets(0, 0, 5, 5);
-		gbc_btnAnadirPedido.gridx = 2;
-		gbc_btnAnadirPedido.gridy = 2;
-		panelPedido.add(btnAnadirPedido, gbc_btnAnadirPedido);
-
-		JScrollPane scrollPane = new JScrollPane();
-		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
-		gbc_scrollPane.gridheight = 2;
-		gbc_scrollPane.fill = GridBagConstraints.BOTH;
-		gbc_scrollPane.gridwidth = 3;
-		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
-		gbc_scrollPane.gridx = 0;
-		gbc_scrollPane.gridy = 3;
-		panelPedido.add(scrollPane, gbc_scrollPane);
-
 		
-		
+				JButton btnAnadirPedido = new JButton("A\u00F1adir elemento al pedido");
+						
+					
+						 ComboClienteChachi = new JComboBox<>(((ArrayList)gestorC.obtener()).toArray());
 
-		tablaCesta = new JTable();
-		  
-		  tablaCesta.setModel(new DefaultTableModel(
-		   new Object[][] {{null, null},},
-		   new String[] {"Articulo", "Cantidad"}) {
-		   boolean[] columnEditables = new boolean[] {
-		    false, true, true, false
-		   };
-		   public boolean isCellEditable(int row, int column) {
-		    return columnEditables[column];
-		   }
-		  });
-		tablaCesta.setBorder(new EmptyBorder(3, 3, 3, 3));
-		tablaCesta.setBackground(new Color(255, 255, 204));
-		tablaCesta.setForeground(new Color(0, 51, 102));
-		tablaCesta.setFont(new Font("Arial", Font.PLAIN, 12));
-		scrollPane.setViewportView(tablaCesta);
+						GridBagConstraints gbc_ComboClienteChachi = new GridBagConstraints();
+						gbc_ComboClienteChachi.insets = new Insets(0, 0, 5, 5);
+						gbc_ComboClienteChachi.fill = GridBagConstraints.HORIZONTAL;
+						gbc_ComboClienteChachi.gridx = 1;
+						gbc_ComboClienteChachi.gridy = 1;
+						panelPedido.add(ComboClienteChachi, gbc_ComboClienteChachi);
+				
+				
+						JScrollPane scrollPane = new JScrollPane();
+						GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+						gbc_scrollPane.gridheight = 2;
+						gbc_scrollPane.fill = GridBagConstraints.BOTH;
+						gbc_scrollPane.gridwidth = 2;
+						gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
+						gbc_scrollPane.gridx = 1;
+						gbc_scrollPane.gridy = 2;
+						panelPedido.add(scrollPane, gbc_scrollPane);
+						
+								
+								
+						
+								tablaCesta = new JTable();
+								
+								tablaCesta.setModel(new DefaultTableModel(
+								 new Object[][] {{null, null},},
+								 new String[] {"Articulo", "Cantidad"}) {
+								 boolean[] columnEditables = new boolean[] {
+								  false, true, true, false
+								 };
+								 public boolean isCellEditable(int row, int column) {
+								  return columnEditables[column];
+								 }
+								});
+								tablaCesta.setBorder(new EmptyBorder(3, 3, 3, 3));
+								tablaCesta.setBackground(new Color(255, 255, 204));
+								tablaCesta.setForeground(new Color(0, 51, 102));
+								tablaCesta.setFont(new Font("Arial", Font.PLAIN, 12));
+								scrollPane.setViewportView(tablaCesta);
+				
+				JLabel lblArticulo = new JLabel("Articulo");
+				GridBagConstraints gbc_lblArticulo = new GridBagConstraints();
+				gbc_lblArticulo.insets = new Insets(0, 0, 5, 5);
+				gbc_lblArticulo.gridx = 1;
+				gbc_lblArticulo.gridy = 4;
+				panelPedido.add(lblArticulo, gbc_lblArticulo);
+				
+				comboArticulo = new JComboBox<>(((ArrayList)gestorA.obtener()).toArray());
+				GridBagConstraints gbc_comboArticulo = new GridBagConstraints();
+				gbc_comboArticulo.insets = new Insets(0, 0, 5, 5);
+				gbc_comboArticulo.fill = GridBagConstraints.HORIZONTAL;
+				gbc_comboArticulo.gridx = 1;
+				gbc_comboArticulo.gridy = 5;
+				panelPedido.add(comboArticulo, gbc_comboArticulo);
+				GridBagConstraints gbc_btnAnadirPedido = new GridBagConstraints();
+				gbc_btnAnadirPedido.insets = new Insets(0, 0, 5, 5);
+				gbc_btnAnadirPedido.gridx = 2;
+				gbc_btnAnadirPedido.gridy = 5;
+				panelPedido.add(btnAnadirPedido, gbc_btnAnadirPedido);
+		
+		JLabel lblCantidad = new JLabel("Cantidad");
+		GridBagConstraints gbc_lblCantidad = new GridBagConstraints();
+		gbc_lblCantidad.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCantidad.gridx = 1;
+		gbc_lblCantidad.gridy = 6;
+		panelPedido.add(lblCantidad, gbc_lblCantidad);
+		
+		txtCantidadArticulo = new JTextField();
+		txtCantidadArticulo.setText("");
+		GridBagConstraints gbc_txtCantidadArticulo = new GridBagConstraints();
+		gbc_txtCantidadArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_txtCantidadArticulo.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtCantidadArticulo.gridx = 1;
+		gbc_txtCantidadArticulo.gridy = 7;
+		panelPedido.add(txtCantidadArticulo, gbc_txtCantidadArticulo);
+		txtCantidadArticulo.setColumns(10);
+		
+		lblInfoPedido = new JLabel("");
+		GridBagConstraints gbc_lblInfoPedido = new GridBagConstraints();
+		gbc_lblInfoPedido.insets = new Insets(0, 0, 0, 5);
+		gbc_lblInfoPedido.gridx = 1;
+		gbc_lblInfoPedido.gridy = 8;
+		panelPedido.add(lblInfoPedido, gbc_lblInfoPedido);
 
 		btnDarDeAltaPedido = new JButton("Dar de alta");
+		
 		
 		btnDarDeAltaPedido.setFont(new Font("Verdana", Font.PLAIN, 11));
 		GridBagConstraints gbc_btnDarDeAltaPedido = new GridBagConstraints();
@@ -274,13 +319,6 @@ public class UIAltas extends JFrame {
 		gbc_btnDarDeAltaPedido.gridx = 2;
 		gbc_btnDarDeAltaPedido.gridy = 8;
 		panelPedido.add(btnDarDeAltaPedido, gbc_btnDarDeAltaPedido);
-
-		JButton btnCancelarPedido = new JButton("Cancelar");
-		btnCancelarPedido.setFont(new Font("Verdana", Font.PLAIN, 11));
-		GridBagConstraints gbc_btnCancelarPedido = new GridBagConstraints();
-		gbc_btnCancelarPedido.gridx = 3;
-		gbc_btnCancelarPedido.gridy = 8;
-		panelPedido.add(btnCancelarPedido, gbc_btnCancelarPedido);
 
 		JPanel panelCliente = new JPanel();
 		panelDePestañas.addTab("AltaCliente", null, panelCliente, null);
@@ -346,8 +384,17 @@ public class UIAltas extends JFrame {
 		gbc_txtDescripcionCliente.gridx = 4;
 		gbc_txtDescripcionCliente.gridy = 5;
 		panelCliente.add(txtDescripcionCliente, gbc_txtDescripcionCliente);
+		
+		lblInfpCliente = new JLabel("");
+		GridBagConstraints gbc_lblInfpCliente = new GridBagConstraints();
+		gbc_lblInfpCliente.anchor = GridBagConstraints.WEST;
+		gbc_lblInfpCliente.insets = new Insets(0, 0, 5, 5);
+		gbc_lblInfpCliente.gridx = 2;
+		gbc_lblInfpCliente.gridy = 6;
+		panelCliente.add(lblInfpCliente, gbc_lblInfpCliente);
 
 		btnDardealtaCliente = new JButton("Dar de Alta");
+		
 		
 		
 		GridBagConstraints gbc_btnDardealtaCliente = new GridBagConstraints();
@@ -357,15 +404,6 @@ public class UIAltas extends JFrame {
 		gbc_btnDardealtaCliente.gridx = 5;
 		gbc_btnDardealtaCliente.gridy = 7;
 		panelCliente.add(btnDardealtaCliente, gbc_btnDardealtaCliente);
-
-		JButton btnCancelarCliente = new JButton("Cancelar");
-		GridBagConstraints gbc_btnCancelarCliente = new GridBagConstraints();
-		gbc_btnCancelarCliente.insets = new Insets(0, 0, 5, 0);
-		gbc_btnCancelarCliente.anchor = GridBagConstraints.NORTH;
-		gbc_btnCancelarCliente.fill = GridBagConstraints.HORIZONTAL;
-		gbc_btnCancelarCliente.gridx = 6;
-		gbc_btnCancelarCliente.gridy = 7;
-		panelCliente.add(btnCancelarCliente, gbc_btnCancelarCliente);
 	}
 
 }
