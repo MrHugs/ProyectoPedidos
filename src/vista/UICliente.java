@@ -44,8 +44,7 @@ public class UICliente extends JFrame {
 		contentPane.setLayout(gbl_contentPane);
 		
 		
-		String[] nombrecolumnas = {"DNI","Nombre", "Descripción"};
-		Object[][] datos ={{"456365X", "SrNick","5"},{"456365X", "SrNick","7"}};
+	
 		
 		lblId = new JLabel("Id");
 		GridBagConstraints gbc_lblId = new GridBagConstraints();

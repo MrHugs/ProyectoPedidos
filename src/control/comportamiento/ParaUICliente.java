@@ -16,7 +16,7 @@ public class ParaUICliente extends UICliente {
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Cliente cliente = consulta.consultaCliente(txtBuscaCliente.getText().toString(), Tipo.cliente);
-				txtClienteEncontrado.setText("DNI: "+cliente.getDni()+" 	Nombre: "+cliente.getNombre()+"		Descripcion: "+cliente.getDescripcion());
+				txtClienteEncontrado.setText("DNI: "+cliente.getDni()+"   Nombre: "+cliente.getNombre()+"   Descripcion: "+cliente.getDescripcion());
 			}
 		});
 		

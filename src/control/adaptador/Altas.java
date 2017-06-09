@@ -16,8 +16,8 @@ public class Altas implements IAltas {
 		alta.altaCliente( clientes.getDni(),clientes.getNombre(), clientes.getDescripcion(), Tipo.cliente);
 		alta.altaCliente( clientes2.getDni(),clientes2.getNombre(), clientes2.getDescripcion(), Tipo.cliente);
 
-		alta.altaArticulo("12", "maracas", 2000f, "suenan", Tipo.articulo);
-		alta.altaArticulo("2", "mas", 20f, "suen", Tipo.articulo);
+		alta.altaArticulo("1", "maracas", 2000f, "suenan", Tipo.articulo);
+		alta.altaArticulo("2", "Vaso", 1.25f, "cristal", Tipo.articulo);
 
 		
 		
