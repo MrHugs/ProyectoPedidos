@@ -6,6 +6,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import control.comportamiento.ParaUIArticulo;
+import control.comportamiento.ParaUICliente;
+import control.comportamiento.ParaUIPedidos;
+
 import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
@@ -38,7 +43,7 @@ public class UIConsultas extends JFrame {
 		btnCliente.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				UICliente ventanaCliente = new UICliente();
+				ParaUICliente ventanaCliente = new ParaUICliente();
 				ventanaCliente.setVisible(true);
 			}
 		});
@@ -49,7 +54,7 @@ public class UIConsultas extends JFrame {
 		btnArticulo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				UIArticulo ventanaArticulo = new UIArticulo();
+				ParaUIArticulo ventanaArticulo = new ParaUIArticulo();
 				ventanaArticulo.setVisible(true);
 			}
 		});
@@ -59,7 +64,7 @@ public class UIConsultas extends JFrame {
 		btnPedido.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				UIPedidos ventanaPedidos = new UIPedidos();
+				ParaUIPedidos ventanaPedidos = new ParaUIPedidos();
 				ventanaPedidos.setVisible(true);
 			}
 		});

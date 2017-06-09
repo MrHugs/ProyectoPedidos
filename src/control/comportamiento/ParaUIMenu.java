@@ -16,7 +16,7 @@ public class ParaUIMenu extends UIMenu {
 	btnAltas.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
-			UIAltas ventanaAltas = new UIAltas();
+			ParaUIAltas ventanaAltas = new ParaUIAltas();
 			ventanaAltas.setVisible(true);
 		}
 	});
@@ -24,7 +24,7 @@ public class ParaUIMenu extends UIMenu {
 	btnConsultas.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			UIConsultas ventanaConsultas = new UIConsultas();
+			ParaUIConsultas ventanaConsultas = new ParaUIConsultas();
 			ventanaConsultas.setVisible(true);
 		}
 	});
